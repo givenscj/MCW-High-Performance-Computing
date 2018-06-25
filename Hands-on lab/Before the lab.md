@@ -2,7 +2,7 @@
 
 ## Requirements
 
--   Microsoft Azure subscription (non-Microsoft subscription)
+-   Microsoft Azure subscription (non-Microsoft subscription, must be a pay-as-you subscription)
 
 -   Local machine running Windows or Mac OS X
 

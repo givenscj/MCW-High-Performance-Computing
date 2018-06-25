@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-March 2018
+June 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -135,10 +135,10 @@ In this exercise, you will setup your environment to work with Azure Batch.
 
 12. Select OK
 
-13. On the Choose a Size blade, select D1 Standard and then Select\
-    ![D1 Standard is selected in the Choose a size blade.](images/Hands-onlabstep-bystep-BigComputeimages/media/image19.png "Choose a size blade")
+13. On the Choose a Size blade, select D1_v2 Standard and then Select\
+    ![D1_v2 Standard is selected in the Choose a size blade.](images/Hands-onlabstep-bystep-BigComputeimages/media/image19.png "Choose a size blade")
 
-14. On the Settings blade, leave the defaults and select OK\
+14. On the Settings blade, under Select public inbound ports select SSH. Leave the remaining settings at their defaults and select OK\
     ![The Settings blade displays with the default settings.](images/Hands-onlabstep-bystep-BigComputeimages/media/image20.png "Settings blade")
 
 15. On the Create blade, select Create\
@@ -165,7 +165,7 @@ In this exercise, you will setup your environment to work with Azure Batch.
 
 2.  Within your SSH session, run the following command to prepare for the CLI:
     ```
-    echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
+    echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ xenial main" | \
          sudo tee /etc/apt/sources.list.d/azure-cli.list
     ```
 
@@ -186,10 +186,8 @@ In this exercise, you will setup your environment to work with Azure Batch.
 
 6.  The Azure CLI includes most of the functionality that you need for Azure Batch. However, new capabilities that are still in preview (such as the Templates and File feature we will use in this lab) are installed by an extension, and are not available from default Azure CLI installation. Run the following command to install the Microsoft Azure Batch Extensions. Note that you can always determine the latest release by visiting <https://github.com/Azure/azure-batch-cli-extensions/releases> and copying the URL for the Python Wheel (.whl) corresponding to the latest release. Use that URL as the value for the Source parameter in the following command:
     ```
-    az extension add --source 
+    az extension add --source https://github.com/Azure/azure-batch-cli-extensions/releases/download/azure-batch-cli-extensions-2.3.0/azure_batch_cli_extensions-2.3.0-py2.py3-none-any.whl
     ```
-    https://github.com/Azure/azure-batch-cli-extensions/releases/download/azure-batch-cli-extensions-2.1.0/azure\_batch\_cli\_extensions-2.1.0-py2.py3-none-any.whl
-
 7.  When prompted to install the extension, type Y and press enter
 
 8.  You can verify if the extension was installed at any time by running:
@@ -203,7 +201,7 @@ In this exercise, you will setup your environment to work with Azure Batch.
       {
         "extensionType": "whl",
         "name": "azure-batch-cli-extensions",
-        "version": "2.1.0"
+        "version": "2.3.0"
       }
     ]
     ```
@@ -243,12 +241,14 @@ In this exercise, you will setup your environment to work with Azure Batch.
 
     -   Name: Provide a name for the new Azure Storage account that will attached to your Batch Service
 
-    -   Performance: Leave this at Standard
+    -   Account kind: Leave this at Storage (general purpose v1)
 
+    -   Performance: Leave this at Standard   
+    
     -   Replication: Leave this at Locally-redundant storage (LRS)
 
     -   Select OK at the bottom of the blade\
-        ![Screenshot of the Cretate storage account blade.](images/Hands-onlabstep-bystep-BigComputeimages/media/image31.png "Cretate storage account blade")
+        ![Screenshot of the Create storage account blade.](images/Hands-onlabstep-bystep-BigComputeimages/media/image31.png "Create storage account blade")
 
 10. Back on the New Batch Account blade, leave the Pool allocation mode set to Batch service\
     ![Pool allocation mode is set to Batch service.](images/Hands-onlabstep-bystep-BigComputeimages/media/image32.png "Pool allocation mode")
@@ -305,6 +305,7 @@ In this exercise, you will resample video files in scale-out way by using Azure 
     ```
     Make a few copies of the video to create some additional work for the processing we will perform:
 
+    ```
     cp big_buck_bunny_720p_30mb.mp4 big_buck_bunny2_720p_30mb.mp4
     cp big_buck_bunny_720p_30mb.mp4 big_buck_bunny3_720p_30mb.mp4
     cp big_buck_bunny_720p_30mb.mp4 big_buck_bunny4_720p_30mb.mp4
@@ -314,6 +315,7 @@ In this exercise, you will resample video files in scale-out way by using Azure 
     cp big_buck_bunny_720p_30mb.mp4 big_buck_bunny8_720p_30mb.mp4
     cp big_buck_bunny_720p_30mb.mp4 big_buck_bunny9_720p_30mb.mp4
     cp big_buck_bunny_720p_30mb.mp4 big_buck_bunny10_720p_30mb.mp4
+    ```
 
 5.  These videos are currently staged on the Jump Box, but in order to process them using Azure Batch, you will need to copy them over to Azure Storage
 
@@ -341,7 +343,7 @@ In this exercise, you will resample video files in scale-out way by using Azure 
 
 12. Select the Subscription that contains your Batch Account by running the following (be sure to substitute your own subscription name or subscription ID):
     ```
-    az account set \--subscription subscriptionNameOrID
+    az account set --subscription subscriptionNameOrID
     ```
 
 13. Login to your Batch Account by executing the following command (be sure to replace the batchAccountName with the name of your Batch Account):
@@ -462,7 +464,7 @@ An Azure Batch Pool Template enables an experienced Batch user to provide a simp
                 ]
     ```
 
-11. Save the JSON file by selecting Write Out by typing Control + O followed by Enter to leave the name set to pool.json
+11. Save the JSON file by selecting Write Out by typing Control + O followed by Enter to leave the name set to pool.json. Use Control + X to quit nano
 
 12. The template for the pool is now ready for use by an end user
 
@@ -484,7 +486,7 @@ The first step in building a Batch Job is understanding the command line of the 
 
 4.  Next, resample one of the MP4 files found within the samples directory using ffmpeg. We use the -s option to indicate the desired width and height, followed by the strict option which allows the selection of the native FFmpeg AAC encoder:
     ```
-    ffmpeg -i big_buck\bunny_720p_30mb.mp4 -y -s "428x240" -strict -2 output.mp4
+    ffmpeg -i big_buck_bunny_720p_30mb.mp4 -y -s "428x240" -strict -2 output.mp4
     ```
 
 5.  Within a minute or so the resampled video should be ready. Run the following command and verify that you have an output.mp4. How does the size of this file compare to the other MP4 files in this directory?
@@ -519,7 +521,7 @@ The first step in building a Batch Job is understanding the command line of the 
                 }
             },
             "resolution": {
-                "type": "string",sudo
+                "type": "string",
                 "defaultValue": "428x240",
                 "allowedValues": [
                     "428x240",
@@ -658,7 +660,7 @@ The first step in building a Batch Job is understanding the command line of the 
                 },
     ```
     
-17. Save the JSON file by selecting Write Out by typing Control + O followed by Enter to leave the name set to job.json
+17. Save the JSON file by selecting Write Out by typing Control + O followed by Enter to leave the name set to job.json. Use Contol + X to quit nano
 
 18. The template for the job is now ready for use by an end user
 
@@ -676,13 +678,25 @@ In this task, pretend you are switching roles and are now the end user who has b
 
 2.  Run the following command to create a new Batch Pool from the template (be sure to replace the batchAccountName and batchAccountLocation with the values specific to your Batch Account):
     
-    sudo az batch pool create \--template pool.json \--account-name **batchAccountName** \--account-endpoint **batchAccountName**.**batchAccountLocation**.batch.azure.com
+    ```
+    sudo az batch pool create --template pool.json --account-name batchAccountName --account-endpoint batchAccountName.batchAccountLocation.batch.azure.com
+    ```
+
+
+    NOTE: If you get an error running the above command along the lines of **'float' object cannot be interpreted as an integer**, follow these steps:
+    1. Use nano to edit this file:\
+    nano /home/zoinertejada/.azure/cliextensions/azure-batch-cli-extensions/azext/batch/operations/task_operations.py
+    2. Use Control + _  (control and underscore requires using the shift key), type 274 and press enter to go to line 274.
+    3. Replace the line 
+        if threads and threads > 0:
+    with this:
+        if threads and threads >= 1:
+    4. Select Control + O to save the changes, then control + x to exit nano.
+    5. Retry the az batch pool create command as before.
 
 3.  The command will prompt you for the values to use for the parameters, including the poolId and nodeCount. Provide these as follows:
 
     The behavior of this command has been altered by the following extension: azure-batch-cli-extensions
-
-    You are using an experimental feature {Pool Template}.
 
     poolId (The pool id ): **resamplePool**
 
@@ -694,7 +708,7 @@ In this task, pretend you are switching roles and are now the end user who has b
     ![In the Batch labs dashboard, Pool status now lists resamplePool.](images/Hands-onlabstep-bystep-BigComputeimages/media/image45.png "Batch labs dashboard")
 
 5.  It will take about 2-3 minutes for the Pool to be ready (at which point the resamplePool status will show a fixed 5 instances)\
-    ![Under Pool status, resampleppl lists five instances.](images/Hands-onlabstep-bystep-BigComputeimages/media/image46.png "Pool status")
+    ![Under Pool status, resamplePool lists five instances.](images/Hands-onlabstep-bystep-BigComputeimages/media/image46.png "Pool status")
 
 6.  This means the VM nodes in the pool are ready for some work. Continue with the next task to supply some
 
@@ -704,7 +718,7 @@ In this task, you will continue in the role of the end user, this time using the
 
 1.  Return to the SSH session, make sure you have navigated to the folder that contains the job.json file
 
-2.  Run the following command to create and run the job to resample the images. Be sure to replace batchAccountName and batchAccountLocation as appropriate.
+2.  Run the following command to create and run the job to resample the videos. Be sure to replace batchAccountName and batchAccountLocation as appropriate.
     ```
     sudo az batch job create --template job.json --account-name batchAccountName --account-endpoint batchAccountName.batchAccountLocation.batch.azure.com
     ```
@@ -840,7 +854,7 @@ We had to enable Auto scale using the portal, but we can also edit the Auto scal
 
 7.  Review the formula. This formula will be evaluated every 5 minutes (as dictated by the Evaluation Interval). The first line gets percentage of telemetry actually reported versus the total amount expected. To understand this, note that Batch samples the telemetry every 30 seconds. In a 5 minute windows, therefore, there are theoretically 10 samples to expect. However, not all samples are collected in time because of various latencies, or they may be lost, leading to a case where fewer than the expected number of samples is collected.
     ```
-    \$samples = \$ActiveTasks.GetSamplePercent(TimeInterval\_Minute \* 5);
+    $samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 5);
     ```
 
 8.  In the next line, we determine how many samples were collected. If fewer than 70 percent of the expected samples were collected, then we determine the number of tasks from the very last sample we received. Otherwise, we choose the larger number of tasks provided by either the last sample or the average number of tasks over the last 5 minutes.
@@ -850,7 +864,7 @@ We had to enable Auto scale using the portal, but we can also edit the Auto scal
 
 9.  Next comes the line which is critical to the number of nodes to scale up to or down to is calculated. In this line, if we a have one or more tasks, we simply allocate as many nodes as we have tasks. If we have no tasks to process, then we reduce the amount of VM's, dividing the amount we currently have allocated by 4. If the division by 4 yields a value less than 1 then this is effectively treated as 0 nodes. In the case of no tasks to process, this enables us to scale down gradually, every 5 minutes we might scale down the pool to 1/4^th^ its previous size.
     ```
-    \$targetVMs = $tasks > 0 ? $tasks : max(0, $TargetDedicated / 4);
+    $targetVMs = $tasks > 0 ? $tasks : max(0, $TargetDedicated / 4);
     ```
 
     In the next two lines, we guard that our scaling calculation does not result in fewer than 0 nodes and no more than the maximum size we desire (in this case, we don't want it to be bigger than our pool size which has 4 VMs). With the assignment of TargetDedicated, a resizing operation may take place to adjust the pool size accordingly.
@@ -951,30 +965,24 @@ In this exercise you will use the Azure Batch Rendering Service to render a fram
 
 2.  Unzip the .max file into a folder called scene:![The Introduction to Arnold robot final .max folder displays.](images/Hands-onlabstep-bystep-BigComputeimages/media/image80.png ".Max file")
 
-3.  Next go to the Data tab in Batch Labs and from the top select the + to the right of the label File Groups\
-    ![Screenshot of the Plus symbol to the right of File Groups.](images/Hands-onlabstep-bystep-BigComputeimages/media/image81.png "Plus symbol")
+3.  Next go to the Data tab in Batch Labs, under Storage Containers select File Groups in the drop-down. Then select the + to the right of the label Storage Containers and select From local folder (File group)
+    ![Screenshot of the new File Group options.](images/Hands-onlabstep-bystep-BigComputeimages/media/image81.png "New file group")
 
-4.  Select From local folder\
-    ![In the Plus symbol drop-down menu, From local folder is selected.](images/Hands-onlabstep-bystep-BigComputeimages/media/image82.png "Plus symbol drop-down menu")
-
-5.  On the Create file group blade, provide:
+4.  On the Create file group blade, provide:
 
     -   File group name: specify 3dsmax-input
 
-    -   Files: Use the select directory button to navigate to the Scene directory and select it
+    -   Files: Use the select a folder button to navigate to the Scene directory and select it
 
     -   File Options: leave these at the default values
 
-    -   Select Upload and close\
+    -   Select Create and close\
         ![The Create file group page displays. ](images/Hands-onlabstep-bystep-BigComputeimages/media/image83.png "Create file group section")
 
-6.  Next, you will create the file group that will contain the Job outputs. From the top select the + to the right of the label File Groups\
-    ![Screenshot of the Plus symbol to the right of File Groups.](images/Hands-onlabstep-bystep-BigComputeimages/media/image81.png "Plus symbol")
+5.  Next, you will create the file group that will contain the Job outputs. From the top select the + to the right of the label Storage Containers, and this time select Empty file group\
+    ![Screenshot of the new File Group options.](images/Hands-onlabstep-bystep-BigComputeimages/media/image81.png "New file group")
 
-7.  This time select Empty file group\
-    ![The Plus symbol drop-down menu displays.](images/Hands-onlabstep-bystep-BigComputeimages/media/image82.png "Plus symbol drop-down menu")
-
-8.  Provide the name 3dsmax-output and select Confirm to create the new file group\
+6.  Provide the name 3dsmax-output and select Confirm to create the new file group\
     ![Under Add a new file group, 3dsmax-output displays.](images/Hands-onlabstep-bystep-BigComputeimages/media/image84.png "Add a new file group section")
 
 ### Task 1: Render a 3ds Max Scene
@@ -984,7 +992,7 @@ In this exercise you will use the Azure Batch Rendering Service to render a fram
 
 2.  In the list of Market applications, select 3ds Max
 
-3.  You will be presented with list of actions you can take with 3ds Max and Azure Batch. Select Render an Arnold Scene\
+3.  You will be presented with list of actions you can take with 3ds Max and Azure Batch. Select VRay or Arnold Scene\
     ![On the Choose action tab, a list of actions displays. At this time, we are unable to capture all of the action options. Future versions of this course should address this.](images/Hands-onlabstep-bystep-BigComputeimages/media/image86.png "Choose action")
 
 4.  When using the Rendering Service, you can have the Pool automatically created according to the requirements of 3ds Max or you can supply your own (which requires you to properly configure such a Pool). Select Run job with auto pool.\
@@ -997,7 +1005,7 @@ In this exercise you will use the Azure Batch Rendering Service to render a fram
 
     -   Job Name: 3dsmax-arnold
 
-    -   Input filegroup: select the 3dsmax-input file group from the list
+    -   Input filegroup: select the fgrp-3dsmax-input file group from the list
 
     -   Scene file: select the file Introduction-to-Arnold\_robot\_final.max in the file dialog that displays
 
@@ -1011,13 +1019,13 @@ In this exercise you will use the Azure Batch Rendering Service to render a fram
 
     -   Frame height: Set this to 300. This will render an output that is 300 pixels tall
 
-    -   Output filegroup: select the 3dsmax-output file group from the list\
+    -   Output filegroup: select the fgrp-3dsmax-output file group from the list\
         ![Under Job, fields are set to the previously defined settings.](images/Hands-onlabstep-bystep-BigComputeimages/media/image89.png "Job")
 
 7.  Select the submit button to create the Pool and launch the render Job\
     ![Screenshot of the Submit button.](images/Hands-onlabstep-bystep-BigComputeimages/media/image90.png "Submit button")
 
-8.  This will take you're the Jobs tab, with your new Job pre-selected\
+8.  This will take you to the Jobs tab, with your new Job pre-selected\
     ![The Jobs tab displays on the Batch Labs desktop. Zero tasks are active.](images/Hands-onlabstep-bystep-BigComputeimages/media/image91.png "Batch Labs desktop, Jobs tab")
 
 9.  It will take about 5 minutes for the Pool and the single VM to be provisioned. While you wait, it is worth understanding what is happening behind the scenes. The Batch will deploy the VM using an image that already contains 3ds Max, this saves tremendous startup time because installing 3ds Max as a startup task could take 20 minutes alone. Additionally, this particular image is pre-configured to use the licensing for 3ds Max that is provided in Azure by Microsoft. This means you do not need to acquire a license for the VM, nor setup your own licensing infrastructure. Instead, the cost of the license is rolled into the per hour fee associated with this Marketplace image.

@@ -9,7 +9,7 @@ Hands-on lab unguided
 </div>
 
 <div class="MCWHeader3">
-March 2018
+June 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -152,7 +152,7 @@ In this exercise, you will set up your environment to work with Azure Batch.
 
 2.  Within your SSH session, run the following command to prepare for the CLI:
     ```
-    echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
+    echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ xenial main" | \
          sudo tee /etc/apt/sources.list.d/azure-cli.list
     ```
 
@@ -167,10 +167,8 @@ In this exercise, you will set up your environment to work with Azure Batch.
 
 4.  Install the Microsoft Azure Batch Extensions:
     ```
-    az extension add --source 
+    az extension add --source https://github.com/Azure/azure-batch-cli-extensions/releases/download/azure-batch-cli-extensions-2.3.0/azure_batch_cli_extensions-2.3.0-py2.py3-none-any.whl
     ```
-
-    https://github.com/Azure/azure-batch-cli-extensions/releases/download/azure-batch-cli-extensions-2.1.0/azure\_batch\_cli\_extensions-2.1.0-py2.py3-none-any.whl
 
 #### Exit criteria
 
@@ -185,7 +183,7 @@ In this exercise, you will set up your environment to work with Azure Batch.
       {
         "extensionType": "whl",
         "name": "azure-batch-cli-extensions",
-        "version": "2.1.0"
+        "version": "2.3.0"
       }
     ]
     ```
@@ -450,6 +448,17 @@ In this task, pretend you are switching roles and are now the end user who has b
 2.  Run the following command to create a new Batch Pool from the template:
     
     sudo az batch pool create \--template pool.json \--account-name **batchAccountName** \--account-endpoint **batchAccountName**.**batchAccountLocation**.batch.azure.com
+
+    NOTE: If you get an error running the above command along the lines of **'float' object cannot be interpreted as an integer**, follow these steps:
+    1. Use nano to edit this file:\
+    nano /home/zoinertejada/.azure/cliextensions/azure-batch-cli-extensions/azext/batch/operations/task_operations.py
+    2. Use Control + _  (control and underscore requires using the shift key), type 274 and press enter to go to line 274.
+    3. Replace the line 
+        if threads and threads > 0:
+    with this:
+        if threads and threads >= 1:
+    4. Select Control + O to save the changes, then control + x to exit nano.
+    5. Retry the az batch pool create command as before.
 
 3.  Provide a poolId of resamplePool and a nodeCount of 5
 
