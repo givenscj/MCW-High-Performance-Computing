@@ -515,27 +515,27 @@ After speaking with its supportive team at Microsoft, ThoughtRender decided that
 
 *Visualization and Remote Workstations*
 
-1. *Are special types of compute instances needed for remote workstations in Azure*
+1. Are special types of compute instances needed for remote workstations in Azure?
 
     Yes, the "NV" (NVIDIA Visualisation) compute instances should be used. These contain special NVIDIA GRID technology graphics cards (e.g., NVIDIA M60), specialized for visualizations and remote workstation use.
 
-2. *Is a special type of software required for client access? Could users simply use remote desktop? Would this perform the way ThoughtRender (or their customers) would like it to*
+2. Is a special type of software required for client access? Could users simply use remote desktop? Would this perform the way ThoughtRender (or their customers) would like it to?
 
     This depends on the applications and users involved. But typically, for \"high end\" workstation users (i.e., who may already use high powered workstations with GPUs installed), specialized software is needed for best performing remote desktop technology. Example: for interacting with 3D models in a performant way, a \"low latency\" is needed for usable interaction. Partner solution software and technology in this space includes Teradici and Citrix HDX. This software has already been proven in such scenarios for other customers. Teradici uses \"PCoIP\" (PC over IP) technology, which sends only \"changed\" pixels between workstation and display. A physical thin client connected to large monitors, or a software client installed on, e.g., a laptop connected to large monitors, can be used as a remote desktop client.
 
-3. *Would it be secure*
+3. Would it be secure?
 
     Yes, Teradici PCoIP technology sends only "changed" pixels from workstation to display, and encrypts the pixels during transfer.
 
-4. *Would it be color correct*
+4. Would it be color correct?
 
     Teradici ensures color correctness, which may be important for some types of users.
 
-5. *Would it perform*
+5. Would it perform?
 
     The idea to use specialized software (e.g., like Teradici or Citrix HDX) is typically driven by the need to perform and perform better than typical remote desktop.
 
-6. *Would it allow collaboration or interactivity*
+6. Would it allow collaboration or interactivity?
 
     Not all specialized software may facilitate collaboration (i.e., multiple users sharing a screen), and not all software will provide the \"low latency\" needed to interact with the software in a performant way for the users involved. Different software solutions provided by our partners cover some or all of these scenarios in different ways.
 
