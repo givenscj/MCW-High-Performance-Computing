@@ -17,6 +17,7 @@ Information in this document, including URL and other Internet Web site referenc
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
+
 © 2018 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
@@ -141,7 +142,8 @@ In this exercise, you will set up your environment to work with Azure Batch.
 
 #### Exit criteria
 
--   You can SSH into the deployed VM\
+-   You can SSH into the deployed VM
+
     ![A Code window displays with the previously mentioned code solutions. At this time, we are unable to capture all of the information in the code window. Future versions of this course should address this.](images/Hands-onlabunguided-BigComputeimages/media/image4.png "Code window")
 
 ### Task 2: Install the Azure CLI and Azure Batch extensions
@@ -151,12 +153,14 @@ In this exercise, you will set up your environment to work with Azure Batch.
 1.  Within the SSH session to the VM, install the Azure CLI
 
 2.  Within your SSH session, run the following command to prepare for the CLI:
+
     ```
     echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ xenial main" | \
          sudo tee /etc/apt/sources.list.d/azure-cli.list
     ```
 
 3.  Next, run the following commands to install the Azure CLI:
+
     ```
     sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
 
@@ -166,6 +170,7 @@ In this exercise, you will set up your environment to work with Azure Batch.
     ```
 
 4.  Install the Microsoft Azure Batch Extensions:
+
     ```
     az extension add --source https://github.com/Azure/azure-batch-cli-extensions/releases/download/azure-batch-cli-extensions-2.3.0/azure_batch_cli_extensions-2.3.0-py2.py3-none-any.whl
     ```
@@ -173,11 +178,13 @@ In this exercise, you will set up your environment to work with Azure Batch.
 #### Exit criteria
 
 -   Verify if the extension was installed by running:
+
     ```
     az extension list
     ```
 
 -   If you see output similar to the following, the extension is properly installed:
+
     ```
     [
       {
@@ -216,7 +223,8 @@ In this exercise, you will resample video files in scale-out way by using Azure 
 
 #### Exit criteria
 
--   You can see the Batch Account you created using the Dashboard in Batch Labs\
+-   You can see the Batch Account you created using the Dashboard in Batch Labs
+
     ![Screenshot of the Batch labs dashboard with an account, with empty Job status, pool status, and app packages sections.](images/Hands-onlabunguided-BigComputeimages/media/image5.png "Batch labs dashboard")
 
 ### Task 2: Stage the sample videos to process
@@ -235,10 +243,12 @@ In this exercise, you will resample video files in scale-out way by using Azure 
 
     -   Log in and select your Azure Subscription using the Azure CLI
 
-    -   Log in to your Batch Account by executing the following command (be sure to replace the batchAccountName with the name of your Batch Account):\
+    -   Log in to your Batch Account by executing the following command (be sure to replace the batchAccountName with the name of your Batch Account):
+    
         sudo az batch account login -g mcw-lab-big-compute -n **batchAccountName\
 
-    -   Copy the video files from your Jump Box to the linked Storage Account by using the following command from the Batch:\
+    -   Copy the video files from your Jump Box to the linked Storage Account by using the following command from the Batch:
+    
         sudo az batch file upload \--local-path . \--file-group ffmpeg-input \--account-name **batchAccountName** \--account-endpoint **batchAccountName**.**location**.batch.azure.com
 
 #### Exit criteria
@@ -257,7 +267,8 @@ In this exercise, you will resample video files in scale-out way by using Azure 
 
 #### Exit criteria
 
--   Using Storage Explorer, you can see the 10 videos that were uploaded:\
+-   Using Storage Explorer, you can see the 10 videos that were uploaded:
+
     ![The Microsoft Azure Storage Explorer displays information for the ten videos.](images/Hands-onlabunguided-BigComputeimages/media/image6.png "Microsoft Azure Storage Explorer")
 
 ### Task 4: Create an Azure Batch pool template 
@@ -269,6 +280,7 @@ An Azure Batch Pool Template enables an experienced Batch user to provide a simp
 1.  Use the nano editor in the SSH session to create a file called **pool.json**
 
 2.  Begin by creating an empty document with the following three lines:
+
     ```
     {
 
@@ -276,6 +288,7 @@ An Azure Batch Pool Template enables an experienced Batch user to provide a simp
     ```
 
 3.  Then add the parameter definition by pasting the following JSON in the second line between the open and closed curly brace:
+
     ```
         "parameters": {
             "nodeCount": {
@@ -294,6 +307,7 @@ An Azure Batch Pool Template enables an experienced Batch user to provide a simp
     ```
 
 4.  Next in the line below the JSON you just added (just below the "}," add the following template body:
+
     ```
         "pool": {
             "type": "Microsoft.Batch/batchAccounts/pools",
@@ -342,6 +356,7 @@ The first step in building a Batch Job is understanding the command line of the 
 2.  Within the SSH session use apt-get to install the FFmpeg package
 
 3.  Run FFmpeg against one of the MP4 files to resample it to a size of 428x240, using a command similar to:
+
     ```
     ffmpeg -i big_buck_bunny_720p_30mb.mp4 -y -s "428x240" -strict -2 output.mp4
     ```
@@ -351,6 +366,7 @@ The first step in building a Batch Job is understanding the command line of the 
 5.  Use the nano editor to create job.json
 
 6.  Copy and paste the following complete job template:
+
     ```
     {
         "parameters": {
@@ -425,11 +441,11 @@ The first step in building a Batch Job is understanding the command line of the 
     }
     ```
 
-7.  Save the file and exit nano.
+7.  Save the file and exit nano
 
 #### Exit criteria
 
--   You have created the job.json template.
+-   You have created the job.json template
 
 ## Exercise 3: Run a Batch job
 
@@ -450,7 +466,8 @@ In this task, pretend you are switching roles and are now the end user who has b
     sudo az batch pool create \--template pool.json \--account-name **batchAccountName** \--account-endpoint **batchAccountName**.**batchAccountLocation**.batch.azure.com
 
     NOTE: If you get an error running the above command along the lines of **'float' object cannot be interpreted as an integer**, follow these steps:
-    1. Use nano to edit this file:\
+    1. Use nano to edit this file:
+    
     nano /home/zoinertejada/.azure/cliextensions/azure-batch-cli-extensions/azext/batch/operations/task_operations.py
     2. Use Control + _  (control and underscore requires using the shift key), type 274 and press enter to go to line 274.
     3. Replace the line 
@@ -464,7 +481,8 @@ In this task, pretend you are switching roles and are now the end user who has b
 
 #### Exit criteria
 
--   Using Batch Labs, you can see your new pool has 5 instances\
+-   Using Batch Labs, you can see your new pool has 5 instances
+
     ![Under Pool status, resamplePool and the Linux icon display.](images/Hands-onlabunguided-BigComputeimages/media/image7.png "Pool status section")
 
 ### Task 2: Create and run a job using the Azure Batch job template 
@@ -473,7 +491,8 @@ In this task, you will continue in the role of the end user, this time using the
 
 #### Tasks to complete
 
-1.  From your SSH session, Run the following command to create and run the job to resample the images:\
+1.  From your SSH session, Run the following command to create and run the job to resample the images:
+
     sudo az batch job create \--template job.json \--account-name **batchAccountName** \--account-endpoint **batchAccountName**.**batchAccountLocation**.batch.azure.com
 
 2.  Provide the appropriate parameters to target your Pool and provide the name of firstResample for the jobId
@@ -492,7 +511,8 @@ In this task, you will continue in the role of the end user, this time using the
 
 #### Exit criteria
 
--   You can watch the resampled video on your local computer\
+-   You can watch the resampled video on your local computer
+
     ![A screenshot of the Resample video displays.](images/Hands-onlabunguided-BigComputeimages/media/image8.png "Resample video")
 
     (c) copyright 2008, Blender Foundation / www.bigbuckbunny.org
@@ -534,6 +554,7 @@ We had to enable Auto scale using the portal, but we can also edit the Auto scal
 3.  Launch the Resize Pool dialog
 
 4.  Within the Resize Pool Dialog, set the Evaluation interval to **5** minutes and provide the following scaling formula:
+
     ```
     //This formula assumes you have set the Evaluation Interval on the Pool to 5 minutes.
 
@@ -590,7 +611,7 @@ In this exercise, you will use the Azure Batch Rendering Service to render a fra
 
 1.  Download the sample 3ds Max scene from: <https://support.solidangle.com/download/attachments/40665256/Introduction-to-Arnold_robot_final.zip?version=1&modificationDate=1490281794000&api=v2>
 
-2.  Extract it into a folder called **scen**.
+2.  Extract it into a folder called **scen**
 
 3.  Use Batch Labs to create a new File Group:
 
@@ -628,7 +649,8 @@ In this exercise, you will use the Azure Batch Rendering Service to render a fra
 
 #### Exit criteria
 
--   When the job is complete, view the output rendered image. It should look similar to the following:\
+-   When the job is complete, view the output rendered image. It should look similar to the following:
+
     ![The Batch labs desktop displays the rendered image, which is a robot.](images/Hands-onlabunguided-BigComputeimages/media/image11.png "Batch labs desktop")
 
 -   Verify that the Job is terminating, and the Pool is deleting
@@ -643,16 +665,20 @@ Before you conclude the lab, you should make sure to clean up all the resources 
 
 1.  Navigate to the Azure Portal and locate the Resource Group you created for this lab (**mcw-lab-big-compute**)
 
-2.  Select **Delete resource group** from the command bar\
+2.  Select **Delete resource group** from the command bar
+
     ![Screenshot of the Delete resource group button.](images/Hands-onlabunguided-BigComputeimages/media/image12.png "Delete resource group button")
 
-3.  In the confirmation dialog that appears, enter the name of the resource group and select **Delete**\
+3.  In the confirmation dialog that appears, enter the name of the resource group and select **Delete**
+
     ![A Delete resource group confirmation dialog box displays the affected resources, and asks you to confirm that you want to delete it.](images/Hands-onlabunguided-BigComputeimages/media/image13.png "Delete resource group confirmation dialog box")
 
-4.  Wait for the confirmation that the Resource Group has been successfully deleted. If you don't wait, and the delete fails for some reason, you may be left with resources running that were not expected. You can monitor using the Notifications dialog, accessible from the Alarm icon.\
+4.  Wait for the confirmation that the Resource Group has been successfully deleted. If you don't wait, and the delete fails for some reason, you may be left with resources running that were not expected. You can monitor using the Notifications dialog, accessible from the Alarm icon.
+
     ![The Notifications dialog box has the message that it is deleting the resource group.](images/Hands-onlabunguided-BigComputeimages/media/image14.png "Notifications dialog box")
 
-5.  When the Notification indicates success, the cleanup is complete\
+5.  When the Notification indicates success, the cleanup is complete
+
     ![The Notifications dialog box has the message that it deleted the resource group.](images/Hands-onlabunguided-BigComputeimages/media/image15.png "Notifications dialog box")
 
 You should follow all steps provided *after* attending the Hands-on lab.
