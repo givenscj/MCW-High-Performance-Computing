@@ -369,6 +369,7 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 **Supplemental Materials**
 
 The following projects may be helpful to you after completing the workshop in understanding other ways in which Azure Batch can be applied, besides media and rendering.
+
 |    |            |
 |----------|:-------------:|
 | **Description** | **Links** |
