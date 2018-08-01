@@ -245,7 +245,7 @@ In this exercise, you will resample video files in scale-out way by using Azure 
 
     -   Log in to your Batch Account by executing the following command (be sure to replace the batchAccountName with the name of your Batch Account):
     
-        sudo az batch account login -g mcw-lab-big-compute -n **batchAccountName\
+        sudo az batch account login -g mcw-lab-big-compute -n **batchAccountName** 
 
     -   Copy the video files from your Jump Box to the linked Storage Account by using the following command from the Batch:
     
