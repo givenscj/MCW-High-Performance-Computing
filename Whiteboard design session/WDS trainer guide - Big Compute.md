@@ -277,25 +277,22 @@ Directions: With all participants at your table, respond to the following questi
 
 2.  Are there particular types of compute instances you would guide ThoughtRender to use?
     
-    -   Are compute-intensive, memory-intensive, disk-intensive, or network-optimized instances needed?
+3.  Are compute-intensive, memory-intensive, disk-intensive, or network-optimized instances needed?
 
-    -   Are GPU based instances needed?
+4.  Are GPU based instances needed?
 
-3.  How would you guide ThoughtRender to load data so it can be processed by the rendering compute workload?
+5.  How would you guide ThoughtRender to load data so it can be processed by the rendering compute workload?
 
-4.  How will this data be used at the beginning, middle, and end of a compute workload?
+6.  How will this data be used at the beginning, middle, and end of a compute workload?
 
-    -   Where will this data be stored?
+7.  Where will this data be stored?
 
-    -   Will this data be stored on compute instances during a batch run? Would you store data on each compute node working in a batch, or would you store data in a shared area?
+8.  Will this data be stored on compute instances during a batch run? Would you store data on each compute node working in a batch, or would you store data in a shared area?
 
-    -   What sort of performance will be required from this storage?
+9.  What sort of performance will be required from this storage?
 
-    -   Will this data need to be backed up or archived?
+10.  Will this data need to be backed up or archived?
 
-5.  How can ThoughtRender measure and analyze the performance of the compute workload? During and afterward?
-
-6.  How can ThoughtRender scale and resize to be flexible to customer needs?
 
 *Operationalizing and Integrating*
 
@@ -309,13 +306,13 @@ Directions: With all participants at your table, respond to the following questi
 
 2.  Is a special type of software required for client access? Could users simply use remote desktop? Would this perform the way ThoughtRender (or their customers) would like it to?
 
-    -   Would it be secure?
+3.  Would it be secure?
 
-    -   Would it be color correct?
+4.  Would it be color correct?
 
-    -   Would it perform?
+5.  Would it perform?
 
-    -   Would it allow collaboration or interactivity?
+6.  Would it allow collaboration or interactivity?
 
 **Prepare**
 
