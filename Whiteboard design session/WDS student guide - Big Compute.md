@@ -1,4 +1,4 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Big Compute
@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-March 2018
+June 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -17,6 +17,7 @@ Information in this document, including URL and other Internet Web site referenc
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
+
 © 2018 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
@@ -64,7 +65,9 @@ Learning Objectives:
 **Outcome** 
 
 Analyze your customer’s needs.
-Time frame: 15 minutes 
+
+Timeframe: 15 minutes 
+
 Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
 1.  Meet your table participants and trainer 
 2.  Read all of the directions for steps 1–3 in the student guide 
@@ -78,7 +81,7 @@ ThoughtRender currently operates their own, on-premises services (with their own
 
 Customers often ask questions like, "Could you get that job processed this week, instead of in 3 weeks' time?" ThoughtRender thinks that perhaps bursting jobs to the cloud could help them deliver bigger jobs, or regular jobs quicker for their customers (e.g., in 1 day, instead of 5 days). They intend to pilot a solution to address this.
 
-They also want to consider how to integrate with their on-premises infrastructure and operating model. They have three large on-premises HPC clusters -- one in each site -- London, New York, and Singapore. They also have labs in each site that provide high-end visualization workstations for quality control, mostly operated by internal staff, but sometimes together with customers. ThoughtRender have 3 Petabytes (PB) of data (customer assets, and working "scratch" data shares) -- 1 PB typically stored per site.
+They also want to consider how to integrate with their on-premises infrastructure and operating model. They have three large on-premises HPC clusters -- one in each site -- London, New York, and Singapore. They also have labs in each site that provide high-end visualization workstations for quality control, mostly operated by internal staff, but sometimes together with customers. ThoughtRender have 3 petabytes (PB) of data (customer assets, and working "scratch" data shares) -- 1 PB typically stored per site.
 
 Thomas Pix, CIO of ThoughtRender is looking to modernize their story. He would love to understand how to tap into the \"power of the cloud\" to be more flexible to customer demands, but also to consider new ways of working. Lots of data is generated via their on-premises HPC clusters, which also spends a lot of time moving between sites. He would love to see if they can move this data away from their on-premises datacenter into the cloud, and enhance their ability to load, process, and analyze it going forward. Given his long-standing relationship with Microsoft, he would like to see if Azure can meet his needs.
 
@@ -100,7 +103,7 @@ Thomas Pix, CIO of ThoughtRender is looking to modernize their story. He would l
 
 3.  We heard Microsoft does Linux now. But how true is this? Will it work with our chosen Linux version?
 
-4.  We have Petabytes of data on-premises. It would cost us a fortune and take ages to move this to the cloud!
+4.  We have petabytes of data on-premises. It would cost us a fortune and take ages to move this to the cloud!
 
 5.  We heard collaboration is possible for 3D imaging workstations, but we have very specific color requirements and buy top-end workstation equipment for our users. Our users just wouldn\'t get the interaction performance they require with something \"remote\" in the cloud.
 
@@ -119,7 +122,7 @@ https://azure.microsoft.com/en-us/solutions/architecture/hpc-big-compute-saas/
 **Outcome** 
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
-Time frame: 60 minutes
+Timeframe: 60 minutes
 
 **Business needs**
 
@@ -154,25 +157,21 @@ Directions: With all participants at your table, respond to the following questi
 
 2.  Are there particular types of compute instances you would guide ThoughtRender to use?
     
-    -   Are compute-intensive, memory-intensive, disk-intensive, or network-optimized instances needed?
+3.  Are compute-intensive, memory-intensive, disk-intensive, or network-optimized instances needed?
 
-    -   Are GPU based instances needed?
+4.  Are GPU based instances needed?
 
-3.  How would you guide ThoughtRender to load data so it can be processed by the rendering compute workload?
+5.  How would you guide ThoughtRender to load data so it can be processed by the rendering compute workload?
 
-4.  How will this data be used at the beginning, middle, and end of a compute workload?
+6.  How will this data be used at the beginning, middle, and end of a compute workload?
 
-    -   Where will this data be stored?
+7.  Where will this data be stored?
 
-    -   Will this data be stored on compute instances during a batch run? Would you store data on each compute node working in a batch, or would you store data in a shared area?
+8.  Will this data be stored on compute instances during a batch run? Would you store data on each compute node working in a batch, or would you store data in a shared area?
 
-    -   What sort of performance will be required from this storage?
+9.  What sort of performance will be required from this storage?
 
-    -   Will this data need to be backed up or archived?
-
-5.  How can ThoughtRender measure and analyze the performance of the compute workload? During and afterward?
-
-6.  How can ThoughtRender scale and resize to be flexible to customer needs?
+10.  Will this data need to be backed up or archived?
 
 *Operationalizing and Integrating*
 
@@ -186,21 +185,21 @@ Directions: With all participants at your table, respond to the following questi
 
 2.  Is a special type of software required for client access? Could users simply use remote desktop? Would this perform the way ThoughtRender (or their customers) would like it to?
 
-    -   Would it be secure?
+3.  Would it be secure?
 
-    -   Would it be color correct?
+4.  Would it be color correct?
 
-    -   Would it perform?
+5.  Would it perform?
 
-    -   Would it allow collaboration or interactivity?
+6.  Would it allow collaboration or interactivity?
 
 **Prepare**
 
 Directions: With all participants at your table: 
 
-1.  Identify any customer needs that are not addressed with the proposed solution. 
-2.  Identify the benefits of your solution. 
-3.  Determine how you will respond to the customer’s objections. 
+1.  Identify any customer needs that are not addressed with the proposed solution
+2.  Identify the benefits of your solution 
+3.  Determine how you will respond to the customer’s objections 
 
 Prepare a 15-minute chalk-talk style presentation to the customer. 
 
@@ -210,24 +209,24 @@ Prepare a 15-minute chalk-talk style presentation to the customer.
  
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-Time frame: 30 minutes
+Timeframe: 30 minutes
 
 **Presentation** 
 
 Directions:
-1.  Pair with another table.
-2.  One table is the Microsoft team and the other table is the customer.
-3.  The Microsoft team presents their proposed solution to the customer.
-4.  The customer makes one of the objections from the list of objections.
-5.  The Microsoft team responds to the objection.
-6.  The customer team gives feedback to the Microsoft team. 
-7.  Tables switch roles and repeat Steps 2–6.
+1.  Pair with another table
+2.  One table is the Microsoft team and the other table is the customer
+3.  The Microsoft team presents their proposed solution to the customer
+4.  The customer makes one of the objections from the list of objections
+5.  The Microsoft team responds to the objection
+6.  The customer team gives feedback to the Microsoft team 
+7.  Tables switch roles and repeat Steps 2–6
 
 ##  Wrap-up 
 
-Time frame: 15 minutes
+Timeframe: 15 minutes
 
--   Tables reconvene with the larger group to hear an SME share the preferred solution for the case study.
+Directions: Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
 ##  Additional references
 |    |            |
@@ -246,6 +245,7 @@ Time frame: 15 minutes
 **Supplemental Materials**
 
 The following projects may be helpful to you after completing the workshop in understanding other ways in which Azure Batch can be applied, besides media and rendering.
+
 |    |            |
 |----------|:-------------:|
 | **Description** | **Links** |
