@@ -749,9 +749,13 @@ In this task, pretend you are switching roles and are now the end user who has b
     nano /home/zoinertejada/.azure/cliextensions/azure-batch-cli-extensions/azext/batch/operations/task_operations.py
     2. Use Control + _  (control and underscore requires using the shift key), type 274 and press enter to go to line 274.
     3. Replace the line 
+
         if threads and threads > 0:
-    with this:
+
+        with this:
+
         if threads and threads >= 1:
+
     4. Select Control + O to save the changes, then control + x to exit nano.
     5. Retry the az batch pool create command as before.
 
@@ -773,7 +777,7 @@ In this task, pretend you are switching roles and are now the end user who has b
 
     ![Under Pool status, resamplePool lists five instances.](images/Hands-onlabstep-bystep-BigComputeimages/media/image46.png "Pool status")
 
-6.  This means the VM nodes in the pool are ready for some work. Continue with the next task to supply some
+6.  This means the VM nodes in the pool are ready for some work. Continue with the next task to supply some work.
 
 ### Task 2: Create and Run a Job using the Azure Batch Job Template 
 
