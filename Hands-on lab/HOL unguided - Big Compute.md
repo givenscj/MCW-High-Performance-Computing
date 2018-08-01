@@ -466,9 +466,11 @@ In this task, pretend you are switching roles and are now the end user who has b
     sudo az batch pool create \--template pool.json \--account-name **batchAccountName** \--account-endpoint **batchAccountName**.**batchAccountLocation**.batch.azure.com
 
     NOTE: If you get an error running the above command along the lines of **'float' object cannot be interpreted as an integer**, follow these steps:
+
     1. Use nano to edit this file:
     
-    nano /home/zoinertejada/.azure/cliextensions/azure-batch-cli-extensions/azext/batch/operations/task_operations.py
+        nano /home/zoinertejada/.azure/cliextensions/azure-batch-cli-extensions/azext/batch/operations/task_operations.py
+
     2. Use Control + _  (control and underscore requires using the shift key), type 274 and press enter to go to line 274.
     3. Replace the line 
         if threads and threads > 0:
