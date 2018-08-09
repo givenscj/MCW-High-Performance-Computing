@@ -44,21 +44,9 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 ## Abstract and learning objectives 
 
-Setup and configure a scale-out media processing architecture using Azure Batch. You will use big compute (scale-out compute, embarrassingly parallel processing) techniques without having to write a lot of code, learning how these tasks can be accomplished declaratively.
+In this whiteboard design session, you will work with a group to design a scale-out media processing solution using big compute techniques in Azure.
 
-Learning Objectives:
-
--   Learn the core capabilities of Azure Batch
-
--   Understand how to author custom Pool and Job templates
-
--   Work with Job input and output files
-
--   Learn to author Batch auto-scale formulas
-
--   Leverage Batch Labs and the Azure Portal for management and monitoring
-
--   Use Marketplace applications to simplify common big compute tasks, such as 3D rendering
+At the end of this session, you will be better able to design and recommend big compute solutions that are highly scalable, and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
 
 ## Step 1: Review the customer case study 
 
