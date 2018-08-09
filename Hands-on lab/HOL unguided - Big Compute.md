@@ -90,21 +90,9 @@ Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/int
 
 ## Abstract and learning objectives 
 
-Setup and configure a scale-out media processing architecture using Azure Batch. You will use big compute (scale-out compute, embarrassingly parallel processing) techniques without having to write a lot of code, learning how these tasks can be accomplished declaratively.
+In this hands-on lab, you will implement big compute workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
 
-Learning Objectives:
-
--   Learn the core capabilities of Azure Batch
-
--   Understand how to author custom Pool and Job templates
-
--   Work with Job input and output files
-
--   Learn to author Batch auto-scale formulas
-
--   Leverage Batch Labs and the Azure Portal for management and monitoring
-
--   Use Marketplace applications to simplify common big compute tasks, such as 3D rendering
+At the end of this hands-on lab, you will be better able to deploy Azure Batch and an Azure Batch Pool consisting of Linux Virtual Machines. You will be able to configure the pool of VMs to run the FFmpeg app to process videos across the VM nodes in the pool. You will be able to do this using Batch templates and files, which enable you to perform scale-out execution of command line executables (in this case FFmpeg) without having to write any code.
 
 ## Overview
 
