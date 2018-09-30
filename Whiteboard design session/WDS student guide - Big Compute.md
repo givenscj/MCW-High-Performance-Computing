@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-June 2018
+September 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -20,46 +20,47 @@ The names of manufacturers, products, or URLs are provided for informational pur
 
 © 2018 Microsoft Corporation. All rights reserved.
 
-Microsoft and the trademarks listed at https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
+Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
 **Contents**
 
 <!-- TOC -->
 
 - [Big Compute whiteboard design session student guide](#big-compute-whiteboard-design-session-student-guide)
-    - [Abstract and learning objectives](#abstract-and-learning-objectives)
-    - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-        - [Customer situation](#customer-situation)
-        - [Customer needs](#customer-needs)
-        - [Customer objections](#customer-objections)
-        - [Infographic for common scenarios](#infographic-for-common-scenarios)
-    - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-    - [Step 3: Present the solution](#step-3-present-the-solution)
-    - [Wrap-up](#wrap-up)
-    - [Additional references](#additional-references)
+  - [Abstract and learning objectives](#abstract-and-learning-objectives)
+  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
+    - [Customer situation](#customer-situation)
+    - [Customer needs](#customer-needs)
+    - [Customer objections](#customer-objections)
+    - [Infographic for common scenarios](#infographic-for-common-scenarios)
+  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
+  - [Step 3: Present the solution](#step-3-present-the-solution)
+  - [Wrap-up](#wrap-up)
+  - [Additional references](#additional-references)
 
 <!-- /TOC -->
 
-#  Big Compute whiteboard design session student guide
+# Big Compute whiteboard design session student guide
 
-## Abstract and learning objectives 
+## Abstract and learning objectives
 
 In this whiteboard design session, you will work with a group to design a scale-out media processing solution using big compute techniques in Azure.
 
 At the end of this session, you will be better able to design and recommend big compute solutions that are highly scalable, and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
 
-## Step 1: Review the customer case study 
+## Step 1: Review the customer case study
 
 **Outcome** 
 
 Analyze your customer’s needs.
 
-Timeframe: 15 minutes 
+Timeframe: 15 minutes
 
-Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
-1.  Meet your table participants and trainer 
-2.  Read all of the directions for steps 1–3 in the student guide 
-3.  As a table team, review the following customer case study
+Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips.
+
+1. Meet your table participants and trainer.
+2. Read all of the directions for steps 1–3 in the student guide.
+3. As a table team, review the following customer case study.
 
 ### Customer situation
 
@@ -73,128 +74,129 @@ They also want to consider how to integrate with their on-premises infrastructur
 
 Thomas Pix, CIO of ThoughtRender is looking to modernize their story. He would love to understand how to tap into the \"power of the cloud\" to be more flexible to customer demands, but also to consider new ways of working. Lots of data is generated via their on-premises HPC clusters, which also spends a lot of time moving between sites. He would love to see if they can move this data away from their on-premises datacenter into the cloud, and enhance their ability to load, process, and analyze it going forward. Given his long-standing relationship with Microsoft, he would like to see if Azure can meet his needs.
 
-### Customer needs 
+### Customer needs
 
-1.  Want to be able to provide better flexibility to their customer demands (i.e., to have more work processed, or to complete work in a faster time)
+1. Want to be able to provide better flexibility to their customer demands (i.e., to have more work processed, or to complete work in a faster time).
 
-2.  Want to investigate potential advantages to using cloud (e.g., latest technologies, bursting capability, cost savings)
+2. Want to investigate potential advantages to using cloud (e.g., latest technologies, bursting capability, cost savings).
 
-3.  Want to integrate with their on-premises systems where possible (e.g., to burst to cloud for additional capacity)
+3. Want to integrate with their on-premises systems where possible (e.g., to burst to cloud for additional capacity).
 
-4.  Want to collaborate and visualize the results of their work, on their own, or together with customers
+4. Want to collaborate and visualize the results of their work, on their own, or together with customers.
 
-### Customer objections 
+### Customer objections
 
-1.  Will Azure give us control to schedule jobs when we want?
+1. Will Azure give us control to schedule jobs when we want?
 
-2.  Will the capacity be available on Azure when we want it?
+2. Will the capacity be available on Azure when we want it?
 
-3.  We heard Microsoft does Linux now. But how true is this? Will it work with our chosen Linux version?
+3. We heard Microsoft does Linux now. But how true is this? Will it work with our chosen Linux version?
 
-4.  We have petabytes of data on-premises. It would cost us a fortune and take ages to move this to the cloud!
+4. We have petabytes of data on-premises. It would cost us a fortune and take ages to move this to the cloud!
 
-5.  We heard collaboration is possible for 3D imaging workstations, but we have very specific color requirements and buy top-end workstation equipment for our users. Our users just wouldn\'t get the interaction performance they require with something \"remote\" in the cloud.
+5. We heard collaboration is possible for 3D imaging workstations, but we have very specific color requirements and buy top-end workstation equipment for our users. Our users just wouldn\'t get the interaction performance they require with something \"remote\" in the cloud.
 
-6.  Will this take jobs away from our IT system administrators and HPC engineers?
+6. Will this take jobs away from our IT system administrators and HPC engineers?
 
 ### Infographic for common scenarios
 
 High-performance computing (HPC) applications can scale to thousands of compute cores, extend on-premises big compute, or run as a 100% cloud-native solution. This HPC solution is implemented with Azure Batch, which provides job scheduling, auto-scaling of compute resources, and execution management as a platform service (PaaS) that reduces HPC infrastructure code and maintenance.
 
-![In this Common HPC scenario diagram, A Web App and Client app have bi-directional arrows pointing to Batch, which has a bi-directional arrow pointing to Virtual Machines, which has bi-directional arrows pointing to Storage. Microsoft and Linux icons also display.](images/Whiteboarddesignsessiontrainerguide-BigComputeimages/media/image2.png "Common HPC scenario diagram")
+![In this Common HPC scenario diagram, A Web App and Client app have bi-directional arrows pointing to Batch, which has a bi-directional arrow pointing to Virtual Machines, which has bi-directional arrows pointing to Storage. Microsoft and Linux icons also display.](media/common-scenarios.png "Common HPC scenario diagram")
 
-https://azure.microsoft.com/en-us/solutions/architecture/hpc-big-compute-saas/
+<https://azure.microsoft.com/en-us/solutions/architecture/hpc-big-compute-saas/>
 
 ## Step 2: Design a proof of concept solution
 
-**Outcome** 
-Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
+**Outcome**
+Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
 Timeframe: 60 minutes
 
 **Business needs**
 
-Directions: With all participants at your table, answer the following questions and list the answers on a flip chart. 
-1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
-2.  What customer business needs do you need to address with your solution?
+Directions: With all participants at your table, answer the following questions and list the answers on a flip chart.
 
-**Design** 
+1. Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
+2. What customer business needs do you need to address with your solution?
+
+**Design**
 Directions: With all participants at your table, respond to the following questions on a flip chart.
 
-*High-level architecture*
+_High-level architecture_
 
-1.  Without getting into the details (the following sections will address the particular details), diagram your initial vision for handling the top-level requirements for data loading, data preparation, storage, machine learning modeling, and reporting. You will refine this diagram as you proceed.
+1. Without getting into the details (the following sections will address the particular details), diagram your initial vision for handling the top-level requirements for data loading, data preparation, storage, machine learning modeling, and reporting. You will refine this diagram as you proceed.
 
-*Data loading*
+_Data loading_
 
-1.  How would you recommend ThoughtRender get their data into (and out of) Azure? What services would you suggest and what are the specific steps they would need to take to prepare the data, to transfer the data, and where would the loaded data land?
+1. How would you recommend ThoughtRender get their data into (and out of) Azure? What services would you suggest and what are the specific steps they would need to take to prepare the data, to transfer the data, and where would the loaded data land?
 
-2.  Update your diagram with the data loading process with the steps you identified.
+2. Update your diagram with the data loading process with the steps you identified.
 
-*Video and Image Processing*
+_Video and Image Processing_
 
-1.  What software tools will be used here? Are they commercial, or Open Source, or a combination of both? Will ThoughtRender need to throw away the tools they are already using, or are some integrations possible?
+1. What software tools will be used here? Are they commercial, or Open Source, or a combination of both? Will ThoughtRender need to throw away the tools they are already using, or are some integrations possible?
 
-2.  For Linux based tools, does it matter which flavor of Linux is chosen?
+2. For Linux based tools, does it matter which flavor of Linux is chosen?
 
-3.  When are these tools used at ThoughtRender? Are they part of a workflow?
+3. When are these tools used at ThoughtRender? Are they part of a workflow?
 
-*Batch Computing*
+_Batch Computing_
 
-1.  What technology would you recommend ThoughtRender use for implementing their rendering compute workloads in Azure?
+1. What technology would you recommend ThoughtRender use for implementing their rendering compute workloads in Azure?
 
-2.  Are there particular types of compute instances you would guide ThoughtRender to use?
-    
-3.  Are compute-intensive, memory-intensive, disk-intensive, or network-optimized instances needed?
+2. Are there particular types of compute instances you would guide ThoughtRender to use?
 
-4.  Are GPU based instances needed?
+3. Are compute-intensive, memory-intensive, disk-intensive, or network-optimized instances needed?
 
-5.  How would you guide ThoughtRender to load data so it can be processed by the rendering compute workload?
+4. Are GPU based instances needed?
 
-6.  How will this data be used at the beginning, middle, and end of a compute workload?
+5. How would you guide ThoughtRender to load data so it can be processed by the rendering compute workload?
 
-7.  Where will this data be stored?
+6. How will this data be used at the beginning, middle, and end of a compute workload?
 
-8.  Will this data be stored on compute instances during a batch run? Would you store data on each compute node working in a batch, or would you store data in a shared area?
+7. Where will this data be stored?
 
-9.  What sort of performance will be required from this storage?
+8. Will this data be stored on compute instances during a batch run? Would you store data on each compute node working in a batch, or would you store data in a shared area?
 
-10.  Will this data need to be backed up or archived?
+9. What sort of performance will be required from this storage?
 
-*Operationalizing and Integrating*
+10  Will this data need to be backed up or archived?
 
-1.  Is it possible for ThoughtRender to connect their Batch Rendering workloads in Azure, to their Rendering workloads on-premises, in their various sites? If so, will the connection be made at a networking level, an operating system level, or an application level?
+_Operationalizing and Integrating_
 
-2.  Is it possible for ThoughtRender to keep their Azure infrastructure separate (i.e., completely unconnected) to their on-premises HPC clusters?
+1. Is it possible for ThoughtRender to connect their Batch Rendering workloads in Azure, to their Rendering workloads on-premises, in their various sites? If so, will the connection be made at a networking level, an operating system level, or an application level?
 
-*Visualization and Remote Workstations*
+2. Is it possible for ThoughtRender to keep their Azure infrastructure separate (i.e., completely unconnected) to their on-premises HPC clusters?
 
-1.  Are special types of compute instances needed for remote workstations in Azure?
+_Visualization and Remote Workstations_
 
-2.  Is a special type of software required for client access? Could users simply use remote desktop? Would this perform the way ThoughtRender (or their customers) would like it to?
+1. Are special types of compute instances needed for remote workstations in Azure?
 
-3.  Would it be secure?
+2. Is a special type of software required for client access? Could users simply use remote desktop? Would this perform the way ThoughtRender (or their customers) would like it to?
 
-4.  Would it be color correct?
+3. Would it be secure?
 
-5.  Would it perform?
+4. Would it be color correct?
 
-6.  Would it allow collaboration or interactivity?
+5. Would it perform?
+
+6. Would it allow collaboration or interactivity?
 
 **Prepare**
 
-Directions: With all participants at your table: 
+Directions: With all participants at your table:
 
-1.  Identify any customer needs that are not addressed with the proposed solution
-2.  Identify the benefits of your solution 
-3.  Determine how you will respond to the customer’s objections 
+1. Identify any customer needs that are not addressed with the proposed solution.
+2. Identify the benefits of your solution.
+3. Determine how you will respond to the customer’s objections.
 
-Prepare a 15-minute chalk-talk style presentation to the customer. 
+Prepare a 15-minute chalk-talk style presentation to the customer.
 
 ## Step 3: Present the solution
 
 **Outcome**
- 
+
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
 Timeframe: 30 minutes
@@ -202,21 +204,23 @@ Timeframe: 30 minutes
 **Presentation** 
 
 Directions:
-1.  Pair with another table
-2.  One table is the Microsoft team and the other table is the customer
-3.  The Microsoft team presents their proposed solution to the customer
-4.  The customer makes one of the objections from the list of objections
-5.  The Microsoft team responds to the objection
-6.  The customer team gives feedback to the Microsoft team 
-7.  Tables switch roles and repeat Steps 2–6
 
-##  Wrap-up 
+1. Pair with another table.
+2. One table is the Microsoft team and the other table is the customer.
+3. The Microsoft team presents their proposed solution to the customer.
+4. The customer makes one of the objections from the list of objections.
+5. The Microsoft team responds to the objection.
+6. The customer team gives feedback to the Microsoft team.
+7. Tables switch roles and repeat Steps 2–6.
+
+## Wrap-up
 
 Timeframe: 15 minutes
 
 Directions: Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
-##  Additional references
+## Additional references
+
 |    |            |
 |----------|:-------------:|
 | **Description** | **Links** |
@@ -225,10 +229,9 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | Azure Batch | <https://docs.microsoft.com/en-us/azure/batch/> |
 | Batch Shipyard | <https://github.com/Azure/batch-shipyard/> |
 | Batch CLI extensions | <https://github.com/Azure/azure-batch-cli-extensions/> |
-| Batch Labs (beta) | <https://github.com/Azure/BatchLabs/releases/> |
+| Batch Explorer | <https://github.com/Azure/BatchExplorer/releases/> |
 | AzCopy (Linux) | <https://docs.microsoft.com/en-us/azure/storage/storage-use-azcopy-linux/> |
 | Azure Batch Rendering Service | <https://docs.microsoft.com/en-us/azure/batch/batch-rendering-service/> |
-
 
 **Supplemental Materials**
 
