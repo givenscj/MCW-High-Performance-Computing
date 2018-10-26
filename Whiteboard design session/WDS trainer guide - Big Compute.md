@@ -1,4 +1,4 @@
-![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 Big Compute
@@ -62,59 +62,85 @@ Thank you for taking time to support the whiteboard design sessions as a trainer
 
 An amazing trainer:
 
-- Creates a safe environment in which learning can take place.
-- Stimulates the participant's thinking.
-- Involves the participant in the learning process.
-- Manages the learning process (on time, on topic, and adjusting to benefit participants).
-- Ensures individual participant accountability.
-- Ties it all together for the participant.
-- Provides insight and experience into the learning process.
-- Effectively leads the whiteboard design session discussion.
-- Monitors quality and appropriateness of participant deliverables.
-- Effectively leads the feedback process.
+-   Creates a safe environment in which learning can take place.
 
-## Whiteboard design session flow
+-   Stimulates the participant's thinking.
+
+-   Involves the participant in the learning process.
+
+-   Manages the learning process (on time, on topic, and adjusting to benefit participants).
+
+-   Ensures individual participant accountability.
+
+-   Ties it all together for the participant.
+
+-   Provides insight and experience to the learning process.
+
+-   Effectively leads the whiteboard design session discussion.
+
+-   Monitors quality and appropriateness of participant deliverables.
+
+-   Effectively leads the feedback process.
+
+## Whiteboard design session flow 
 
 Each whiteboard design session uses the following flow:
 
 **Step 1: Review the customer case study (15 minutes)**
 
-**Outcome**: Analyze your customer's needs.
+**Outcome**
 
-- Customer's background, situation, needs, and technical requirements.
-- Current customer infrastructure and architecture.
-- Potential issues, objectives, and blockers.
+Analyze your customer's needs.
+
+-   Customer's background, situation, needs and technical requirements
+
+-   Current customer infrastructure and architecture
+
+-   Potential issues, objectives and blockers
 
 **Step 2: Design a proof of concept solution (60 minutes)**
 
-**Outcome**: Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
+**Outcome**
 
-- Determine your target customer audience.
-- Determine customer's business needs to address your solution.
-- Design and diagram your solution.
-- Prepare to present your solution.
+Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
+
+-   Determine your target customer audience.
+
+-   Determine customer's business needs to address your solution.
+
+-   Design and diagram your solution.
+
+-   Prepare to present your solution.
 
 **Step 3: Present the solution (30 minutes)**
 
-**Outcome**: Present solution to your customer.
+**Outcome**
 
-- Present solution.
-- Respond to customer objection.
-- Receive feedback.
+Present solution to your customer:
+
+-   Present solution
+
+-   Respond to customer objections
+
+-   Receive feedback
 
 **Wrap-up (15 minutes)**
 
-- Review preferred solution.
+-   Review preferred solution
 
 ## Before the whiteboard design session: How to prepare
 
 Before conducting your first whiteboard design session:
 
-- Read the Student guide (including the case study) and Trainer guide.
-- Become familiar with all key points and activities.
-- Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions.
-- Before the whiteboard design session, discuss the case study to pick up more ideas.
-- Make notes for later.
+-   Read the Student guide (including the case study) and Trainer guide.
+
+-   Become familiar with all key points and activities.
+
+-   Plan the point you want to stress, which questions you want to drive, transitions, and be ready to answer questions.
+
+-   Prior to the whiteboard design session, discuss the case study to pick up more ideas.
+
+-   Make notes for later.
 
 ## During the whiteboard design session: Tips for an effective whiteboard design session
 
@@ -124,13 +150,13 @@ Before conducting your first whiteboard design session:
 
 When participants are doing activities, you can **look ahead to refresh your memory**.
 
-- **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing.
+-   **Adjust activity and whiteboard design session pace** as needed to allow time for presenting, feedback, and sharing.
 
-- **Add examples, points, and stories** from your own experience. Think about stories you can share that help you make your points clearly and effectively.
+-   **Add examples, points, and stories** from your own experience. Think about stories you can share that help you make your points clearly and effectively.
 
-- **Consider creating a "parking lot"** to record issues or questions raised that are outside the scope of the whiteboard design session or can be answered later. Decide how you will address these issues, so you can acknowledge them without being derailed by them.
+-   **Consider creating a "parking lot"** to record issues or questions raised that are outside the scope of the whiteboard design session or can be answered later. Decide how you will address these issues, so you can acknowledge them without being derailed by them.
 
-***Have fun**! Encourage participants to have fun and share!
+***Have fun**! Encourage participants to have fun and share!*
 
 **Involve your participants.** Talk and share your knowledge but always involve your participants, even while you are the one speaking.
 
@@ -146,7 +172,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 In this whiteboard design session, you will work with a group to design a scale-out media processing solution using big compute techniques in Azure.
 
-At the end of this session, you will be better able to design and recommend big compute solutions that are highly scalable, and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
+At the end of this session, you will be better able to design and recommend big compute solutions that are highly scalable and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
 
 ## Step 1: Review the customer case study
 
@@ -156,21 +182,23 @@ Analyze your customer’s needs.
 
 Timeframe: 15 minutes
 
-Directions: With all participants in the session, the facilitator or SME presents an overview of the customer case study along with technical tips.
+Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips.
 
-1. Meet your table participants and trainer.
-2. Read all of the directions for steps 1–3 in the student guide.
-3. As a table team, review the following customer case study.
+1.  Meet your table participants and trainer.
+
+2.  Read all of the directions for steps 1-3 in the student guide.
+
+3.  As a table team, review the following customer case study.
 
 ### Customer situation
 
-ThoughtRender provides image and video processing services to many industries -- marketing and advertising, retail, medical, and media and entertainment. You know those furniture magazines you love to look at? Most of the pictures in these magazines are generated by the HPC compute clusters at ThoughtRender. Their unique ability to tie together industry solutions into a reliable service for their customers (e.g., furniture magazine designers! 3D animated movie makers!), together with their in-house knowledge on image and video, is a quality service that sets them apart from competitors.
+ThoughtRender provides image and video processing services to many industries; marketing and advertising, retail, medical, and media and entertainment. You know those furniture magazines you love to look at? Most of the pictures in these magazines are generated by the HPC compute clusters at ThoughtRender. Their unique ability to tie together industry solutions into a reliable service for their customers (e.g., furniture magazine designers! 3D animated movie makers!), together with their in-house knowledge on image and video, is a quality service that sets them apart from competitors.
 
-ThoughtRender currently operates their own, on-premises services (with their own on-premises HPC clusters, and other IT infrastructure), but their success has led to challenges in terms of their growth, and ability to scale to new jobs, and new industries. They are curious about cloud and think that not only could it help them scale, but help them improve costs and pass savings to customers, address the seasonality of rendering demand (by only paying for resources when actually used) and to take advantage of new technologies, such as the latest GPUs.
+ThoughtRender currently operates their own, on-premises services, with their own on-premises HPC clusters and other IT infrastructure, but their success has led to challenges in terms of their growth, and ability to scale to new jobs, and new industries. They are curious about cloud and think that not only could it help them scale, but help them improve costs and pass savings to customers, address the seasonality of rendering demand (by only paying for resources when actually used) and to take advantage of new technologies, such as the latest GPUs.
 
 Customers often ask questions like, "Could you get that job processed this week, instead of in 3 weeks' time?" ThoughtRender thinks that perhaps bursting jobs to the cloud could help them deliver bigger jobs, or regular jobs quicker for their customers (e.g., in 1 day, instead of 5 days). They intend to pilot a solution to address this.
 
-They also want to consider how to integrate with their on-premises infrastructure and operating model. They have three large on-premises HPC clusters -- one in each site -- London, New York, and Singapore. They also have labs in each site that provide high-end visualization workstations for quality control, mostly operated by internal staff, but sometimes together with customers. ThoughtRender have 3 petabytes (PB) of data (customer assets, and working "scratch" data shares) -- 1 PB typically stored per site.
+They also want to consider how to integrate with their on-premises infrastructure and operating model. They have three large on-premises HPC clusters, one in each site, in London, New York, and Singapore. They also have labs in each site that provide high-end visualization workstations for quality control, mostly operated by internal staff, but sometimes together with customers. ThoughtRender have 3 petabytes (PB) of data (customer assets and working "scratch" data shares), 1 PB typically stored per site.
 
 Thomas Pix, CIO of ThoughtRender is looking to modernize their story. He would love to understand how to tap into the \"power of the cloud\" to be more flexible to customer demands, but also to consider new ways of working. Lots of data is generated via their on-premises HPC clusters, which also spends a lot of time moving between sites. He would love to see if they can move this data away from their on-premises datacenter into the cloud, and enhance their ability to load, process, and analyze it going forward. Given his long-standing relationship with Microsoft, he would like to see if Azure can meet his needs.
 
@@ -209,19 +237,22 @@ High-performance computing (HPC) applications can scale to thousands of compute 
 ## Step 2: Design a proof of concept solution
 
 **Outcome**
+
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format.
 
 Timeframe: 60 minutes
 
 **Business needs**
 
-Directions: With all participants at your table, answer the following questions and list the answers on a flip chart.
+Directions:  With all participants at your table, answer the following questions and list the answers on a flip chart:
 
-1. Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
-2. What customer business needs do you need to address with your solution?
+1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers?
+
+2.  What customer business needs do you need to address with your solution?
 
 **Design**
-Directions: With all participants at your table, respond to the following questions on a flip chart.
+
+Directions: With all participants at your table, respond to the following questions on a flip chart:
 
 _High-level architecture_
 
@@ -261,13 +292,14 @@ _Batch Computing_
 
 9. What sort of performance will be required from this storage?
 
-10  Will this data need to be backed up or archived?
+10.  Will this data need to be backed up or archived?
 
 _Operationalizing and Integrating_
 
 1. Is it possible for ThoughtRender to connect their Batch Rendering workloads in Azure, to their Rendering workloads on-premises, in their various sites? If so, will the connection be made at a networking level, an operating system level, or an application level?
 
 2. Is it possible for ThoughtRender to keep their Azure infrastructure separate (i.e., completely unconnected) to their on-premises HPC clusters?
+
 
 _Visualization and Remote Workstations_
 
@@ -287,9 +319,11 @@ _Visualization and Remote Workstations_
 
 Directions: With all participants at your table:
 
-1. Identify any customer needs that are not addressed with the proposed solution.
-2. Identify the benefits of your solution.
-3. Determine how you will respond to the customer’s objections.
+1.  Identify any customer needs that are not addressed with the proposed solution.
+
+2.  Identify the benefits of your solution.
+
+3.  Determine how you will respond to the customer's objections.
 
 Prepare a 15-minute chalk-talk style presentation to the customer.
 
@@ -301,19 +335,25 @@ Present a solution to the target customer audience in a 15-minute chalk-talk for
 
 Timeframe: 30 minutes
 
-**Presentation** 
+**Presentation**
 
 Directions:
 
-1. Pair with another table.
-2. One table is the Microsoft team and the other table is the customer.
-3. The Microsoft team presents their proposed solution to the customer.
-4. The customer makes one of the objections from the list of objections.
-5. The Microsoft team responds to the objection.
-6. The customer team gives feedback to the Microsoft team.
-7. Tables switch roles and repeat Steps 2–6.
+1.  Pair with another table.
 
-## Wrap-up
+2.  One table is the Microsoft team and the other table is the customer.
+
+3.  The Microsoft team presents their proposed solution to the customer.
+
+4.  The customer makes one of the objections from the list of objections.
+
+5.  The Microsoft team responds to the objection.
+
+6.  The customer team gives feedback to the Microsoft team.
+
+7.  Tables switch roles and repeat Steps 2-6.
+
+##  Wrap-up 
 
 Timeframe: 15 minutes
 
@@ -348,43 +388,43 @@ The following projects may be helpful to you after completing the workshop in un
 
 ## Step 1: Review the customer case study
 
-- Check in with your table participants to introduce yourself as the trainer.
+-   Check in with your table participants to introduce yourself as the trainer.
 
-- Ask, "What questions do you have about the customer case study?"
+-   Ask, "What questions do you have about the customer case study?"
 
-- Briefly review the steps and time frames of the whiteboard design session.
+-   Briefly review the steps and timeframes of the whiteboard design session.
 
-- Ready, set, go! Let the table participants begin.
+-   Ready, set, go! Let the table participants begin.
 
 ## Step 2: Design a proof of concept solution
 
-- Check in with your tables to ensure that they are transitioning from step to step on time.
+-   Check in with your tables to ensure that they are transitioning from step to step on time.
 
-- Provide some feedback on their responses to the business needs and design.
+-   Provide some feedback on their responses to the business needs and design.
 
-  - Try asking questions first that will lead the participants to discover the answers on their own.
+    -   Try asking questions first that will lead the participants to discover the answers on their own.
 
-- Provide feedback for their responses to the customer's objections.
+-   Provide feedback for their responses to the customer's objections.
 
-  - Try asking questions first that will lead the participants to discover the answers on their own.
+    -   Try asking questions first that will lead the participants to discover the answers on their own.
 
 ## Step 3: Present the solution
 
-- Determine which table will be paired with your table before Step 3 begins.
+-   Determine which table will be paired with your table before Step 3 begins.
 
-  - For the first round, assign one table as the Microsoft team and the other table as the customer.
+-   For the first round, assign one table as the presenting team and the other table as the customer.
 
-- Have the Microsoft team present their solution to the customer team.
+-   Have the presenting team present their solution to the customer team.
 
-  - Have the customer team provide one objection to which the Microsoft team to respond.
+    -   Have the customer team provide one objection for the presenting team to respond to.
 
-  - The presentation, objections, and feedback should take no longer than 15 minutes.
+    -   The presentation, objections, and feedback should take no longer than 15 minutes.
 
-  - If needed, the trainer may also provide feedback.
+    -   If needed, the trainer may also provide feedback.
 
 ## Wrap-up
 
-- Have the table participants reconvene with the larger session group to hear the facilitator/SME share the following preferred solution.
+-   Have the table participants reconvene with the larger session group to hear the facilitator/SME share the following preferred solution.
 
 ## Preferred target audience
 
@@ -396,15 +436,15 @@ These workload solutions often interact with the technical team but often also n
 
 ## Preferred solution
 
-_igh-level architecture_
+_High-level architecture_
 
 1. Without getting into the details (the following sections will address the particular details), diagram your initial vision for handling the top-level requirements for data loading, data preparation, storage, machine learning modeling, and reporting. You will refine this diagram as you proceed.
 
-After speaking with its supportive team at Microsoft, ThoughtRender decided that Azure would, in fact, be the right choice for their platform. They decided to load data into blob storage; explore and prepare it using StorageExplorer and Azure CLI; execute their compute workload with Azure Batch; consider integrations with existing tools and apps their rendering users already have; and visualize and collaborate on remote workstations using Azure NV compute instances, with optional software from third-party providers.
+    After speaking with its supportive team at Microsoft, ThoughtRender decided that Azure would, in fact, be the right choice for their platform. They decided to load data into blob storage; explore and prepare it using StorageExplorer and Azure CLI; execute their compute workload with Azure Batch; consider integrations with existing tools and apps their rendering users already have; and visualize and collaborate on remote workstations using Azure NV compute instances, with optional software from third-party providers.
 
 ![In the Preferred solution diagram Data upload to Azure utilizes Azure CLI and Azure StorageExplorer. Azure Batch Compute includes Azure Storage, and Data Output / Visualization has a NV Workstation.](media/solution-architecture-diagram.png "Preferred solution diagram")
 
-**NOTE**: The preferred solution is only one of many possible, viable approaches.
+**>Note**: The preferred solution is only one of many possible, viable approaches.
 
 _Data loading_
 
@@ -416,11 +456,11 @@ _Video and Image Processing_
 
 1. What software tools will be used here? Are they commercial, or Open Source, or a combination of both? Will ThoughtRender need to throw away the tools they are already using, or are some integrations possible?
 
-    Typically, there will be a combination of both Open Source and commercial tools. Open Source tools used for image/video processing include FFmpeg and Blender. Commercial software tools used in rendering may include Maya, RedShift. ThoughtRender does not need to throw away what applications they are using -- various levels of integration and support may be available with Azure for their applications, and this should be assessed on an app by app basis. Open Source tools (Linux or Windows based) are welcome and usable on Azure.
+    Typically, there will be a combination of both Open Source and commercial tools. Open Source tools used for image/video processing include FFmpeg and Blender. Commercial software tools used in rendering may include Maya, RedShift. ThoughtRender does not need to throw away what applications they are using; various levels of integration and support may be available with Azure for their applications, and this should be assessed on an app by app basis. Open Source tools (Linux or Windows based) are welcome and usable on Azure.
 
 2. For Linux based tools, does it matter which flavor of Linux is chosen?
 
-    Typically, yes, it is a good idea to check the (1) flavor/distribution and (2) version of Linux that is being used to support the applications (e.g., CentOS, version 7.2). There may be multiple versions of Linux in use at the customer for different applications, but this may also be due to lack of maintenance/organization, in which case it could be a good opportunity to help standardize on a single distribution/version to use in this Azure project -- as long as their chosen applications support it.
+    Typically, yes, it is a good idea to check the (1) flavor/distribution and (2) version of Linux that is being used to support the applications (e.g., CentOS, version 7.2). There may be multiple versions of Linux in use at the customer for different applications, but this may also be due to lack of maintenance/organization, in which case it could be a good opportunity to help standardize on a single distribution/version to use in this Azure project, as long as their chosen applications support it.
 
 3. When are these tools used at ThoughtRender? Are they part of a workflow?
 
@@ -432,11 +472,11 @@ _Batch Computing_
 
 1. What technology would you recommend ThoughtRender use for implementing their rendering compute workloads in Azure?
 
-    Azure Batch Rendering -- a combination of IaaS compute resources, managed by Azure Batch (i.e., to start/stop compute resources to complete a rendering workload), and integrated where possible with software rendering tools such as Blender or Maya.
+    Azure Batch Rendering, a combination of IaaS compute resources, managed by Azure Batch (i.e., to start/stop compute resources to complete a rendering workload), and integrated where possible with software rendering tools such as Blender or Maya.
 
 2. Are there particular types of compute instances you would guide ThoughtRender to use?
 
-    Rendering is a compute-heavy activity (physics calculations used to simulate light passing to/through objects in 3D), with a requirement for fast storage to read/write individual frames of video as the rendering activity works through a sequence of video. Frames (i.e., the input/output data for the physics calculation) can be easily \"split up\" between compute nodes, and are not dependent on each other -- this means there is typically little requirement for specialized (i.e., Infiniband) networking for inter-communication during the render.
+    Rendering is a compute-heavy activity (physics calculations used to simulate light passing to/through objects in 3D), with a requirement for fast storage to read/write individual frames of video as the rendering activity works through a sequence of video. Frames (i.e., the input/output data for the physics calculation) can be easily \"split up\" between compute nodes and are not dependent on each other. This means there is typically little requirement for specialized (i.e., Infiniband) networking for inter-communication during the render.
 
 3. Are compute-intensive, memory-intensive, disk-intensive, or network-optimized instances needed?
 
@@ -444,11 +484,11 @@ _Batch Computing_
 
 4. Are GPU based instances needed?
 
-    If the software involved natively makes use of GPUs (e.g., Commercial software RedShift), then yes, these could be needed -- typically the NC series (i.e., NVIDIA GPU \"compute\" focused instances). Otherwise, typically, GPUs are not needed.
+    If the software involved natively makes use of GPUs (e.g., Commercial software RedShift), then yes, these could be needed; typically the NC series (i.e., NVIDIA GPU \"compute\" focused instances). Otherwise, typically, GPUs are not needed.
 
 5. How would you guide ThoughtRender to load data so it can be processed by the rendering compute workload?
 
-    Typically the data should be loaded into a \"fast\" storage share (e.g., perhaps a BeeGFS or Lustre Parallel File System) -- as it may be read/written to in parallel by multiple compute nodes at the same time during rendering. Performance of this storage will be key to the overall completion time for rendering. For standard image processing, if the images or frames can be contained within storage on a compute node, then an ordinary storage share (e.g., SMB) can be used from which to load the data. Then the local SSD storage on the compute node can be used during the actual compute processing, with output written back to the SMB share at the end of the processing.
+    Typically the data should be loaded into a \"fast\" storage share (e.g., perhaps a BeeGFS or Lustre Parallel File System) as it may be read/written to in parallel by multiple compute nodes at the same time during rendering. Performance of this storage will be key to the overall completion time for rendering. For standard image processing, if the images or frames can be contained within storage on a compute node, then an ordinary storage share (e.g., SMB) can be used from which to load the data. Then the local SSD storage on the compute node can be used during the actual compute processing, with output written back to the SMB share at the end of the processing.
 
 6. How will this data be used at the beginning, middle, and end of a compute workload?
 
@@ -456,7 +496,7 @@ _Batch Computing_
 
 7. Where will this data be stored?
 
-    Typically data can be stored on a file share (e.g., SMB). During a compute run, it may be more practical and performant to copy/store this data on a parallel filesystem (e.g., Lustre or BeeGFS), or to local SSD disk on the compute nodes -- typically described as "scratch" disk.
+    Typically data can be stored on a file share (e.g., SMB). During a compute run, it may be more practical and performant to copy/store this data on a parallel filesystem (e.g., Lustre or BeeGFS), or to local SSD disk on the compute nodes, typically described as "scratch" disk.
 
 8. Will this data be stored on compute instances during a batch run? Would you store data on each compute node working in a batch, or would you store data in a shared area?
 
@@ -518,11 +558,11 @@ _Visualization and Remote Workstations_
 
 3. We heard Microsoft does Linux now. But how true is this? Will it work with our chosen Linux version?
 
-    Yes. Microsoft loves Linux! A commitment has been made by Microsoft to make Linux (and wider Open Source technologies) "a first class citizen\" on Azure. Microsoft has relationships with the major Enterprise Linux vendors (i.e., Red Hat, SUSE, Canonical), at various levels and teams, and specific integrations. For example, Microsoft and Red Hat have a relationship (2017) such that you can call Microsoft with a Red Hat query, and have this handled by Red Hat support staff working in Microsoft support centers. You can choose to run Azure Marketplace images of various Linux distributions/versions, and you can also BYOL (Bring Your Own License) for Enterprise Linux versions you own.
+    Yes. Microsoft loves Linux! A commitment has been made by Microsoft to make Linux (and wider Open Source technologies) "a first class citizen" on Azure. Microsoft has relationships with the major Enterprise Linux vendors (i.e., Red Hat, SUSE, Canonical), at various levels and teams, and specific integrations. For example, Microsoft and Red Hat have a relationship (2017) such that you can call Microsoft with a Red Hat query, and have this handled by Red Hat support staff working in Microsoft support centers. You can choose to run Azure Marketplace images of various Linux distributions/versions, and you can also BYOL (Bring Your Own License) for Enterprise Linux versions you own.
 
 4. We have petabytes of data on-premises. It would cost us a fortune and take ages to move this to the cloud!
 
-    Yes, this can pose an issue. However -- there are various methods of transferring data. In the first instance, if copying data over a standard Internet connection does not perform (e.g., direct or with VPN), a dedicated connection to Azure (ExpressRoute) may help. Secondly, optimized tools exist for transferring data -- with huge performance improvements. This includes Azcopy (an open source tool from Microsoft), or commercial tools such as Signiant, Aspera, or FileCatalyst. These tools in combination with dedicated connections may provide fast enough alternatives in given time frames. Thirdly, dedicated services exist for bulk transfers of large data, such as the Azure Data Box. This involves shipping hard drives of data from your data center, to Microsoft data centers. Finally, if it is possible to start with the data in Azure, then the cost of moving is substantially reduced -- and perhaps this may be possible for new projects starting from scratch (and, e.g., for old projects to remain on-premises).
+    Yes, this can pose an issue. However, there are various methods of transferring data. In the first instance, if copying data over a standard Internet connection does not perform (e.g., direct or with VPN), a dedicated connection to Azure (ExpressRoute) may help. Secondly, optimized tools exist for transferring data with huge performance improvements. This includes Azcopy (an open source tool from Microsoft), or commercial tools such as Signiant, Aspera, or FileCatalyst. These tools in combination with dedicated connections may provide fast enough alternatives in given time frames. Thirdly, dedicated services exist for bulk transfers of large data, such as the Azure Data Box. This involves shipping hard drives of data from your data center, to Microsoft data centers. Finally, if it is possible to start with the data in Azure, then the cost of moving is substantially reduced, and perhaps this may be possible for new projects starting from scratch (and, e.g., for old projects to remain on-premises).
 
 5. We heard collaboration is possible for 3D imaging workstations. But we have very specific color requirements and buy top-end workstation equipment for our users. Our users just wouldn't get the interaction performance they require with something \"remote\" in the cloud.
 
@@ -534,6 +574,6 @@ _Visualization and Remote Workstations_
 
 ## Customer quote (to be read back to the attendees at the end)
 
-"_With Big Compute power via Azure at our fingertips, we can control our delivery -- large or small, slow or fast -- for our customers, as well as allowing our team to collaborate and share better, focusing less on fixing hardware, and more on thinking and rendering!_\"
+"With Big Compute power via Azure at our fingertips, we can control our delivery -- large or small, slow or fast -- for our customers, as well as allowing our team to collaborate and share better, focusing less on fixing hardware, and more on thinking and rendering!"
 
 Thomas Pix, CIO of ThoughtRender
