@@ -335,7 +335,7 @@ In this exercise, you will resample video files in scale-out way by using Azure 
 
 11. After logging in, return to SSH prompt. It should update by displaying your list of subscriptions.
 
-    > NOTE: On some SSH clients, pressing ENTER might be required to trigger the update of the screen.
+    >**Note**: On some SSH clients, pressing ENTER might be required to trigger the update of the screen.
 
 12. Select the Subscription that contains your Batch Account by running the following (be sure to substitute your own subscription name or subscription ID):
 
@@ -700,20 +700,23 @@ In this task, pretend you are switching roles and are now the end user who has b
     ```bash
     sudo az batch pool create --template pool.json --account-name batchAccountName --account-endpoint batchAccountName.batchAccountLocation.batch.azure.com
     ```
-    > NOTE: If you get an error running the above command along the lines of **'float' object cannot be interpreted as an integer**, follow these steps:
+    >**Note**: If you get an error running the above command along the lines of **'float' object cannot be interpreted as an integer**, follow these steps:
 
     - Use nano to edit this file:
         `nano /home/zoinertejada/.azure/cliextensions/azure-batch-cli-extensions/azext/batch/operations/task_operations.py`
+        
     - Use Control + _  (control and underscore requires using the shift key), type 274 and press enter to go to line 274.
-    - Replace the line.
+    
+    - Replace the line:
 
-        if threads and threads > 0:
+        'if threads and threads > 0:'
 
-        with this:
+        with:
 
-        if threads and threads >= 1:
+        'if threads and threads >= 1:'
 
     - Select Control + O to save the changes, then control + x to exit nano.
+    
     - Retry the az batch pool create command as before.
 
 3. The command will prompt you for the values to use for the parameters, including the poolId and nodeCount. Provide these as follows:
@@ -1010,11 +1013,13 @@ In this exercise you will use the Azure Batch Rendering Service to render a fram
 
 ### Task 1: Create the File Groups
 
-1. 3D animations are described in scene files. In this task you will use an example scene created with 3D Studio Max 2018. Download the sample scene from here:
+1. 3D animations are described in scene files. In this task you will use an example scene created with 3D Studio Max 2018. Download the sample scene from:
 
     <https://support.solidangle.com/download/attachments/40665256/Introduction-to-Arnold_robot_final.zip?version=1&modificationDate=1490281794000&api=v2>
 
-2. Unzip the .max file into a folder called scene:![The Introduction to Arnold robot final .max folder displays.](media/image80.png ".Max file").
+2. Unzip the .max file into a folder called scene:
+
+    ![The Introduction to Arnold robot final .max folder displays.](media/image80.png ".Max file").
 
 3. Next go to the Data tab in Batch Explorer, under Storage Containers select File Groups in the drop-down. Then select the + to the right of the label Storage Containers and select From local folder (File group).
 
@@ -1022,11 +1027,11 @@ In this exercise you will use the Azure Batch Rendering Service to render a fram
 
 4. On the Create file group blade, provide:
 
-    - File group name: Specify 3dsmax-input.
+    - **File group name**: Specify 3dsmax-input.
 
-    - Files: Use the select a folder button to navigate to the Scene directory and select it.
+    - **Files**: Use the select a folder button to navigate to the Scene directory and select it.
 
-    - File Options: Leave these at the default values.
+    - **File Options**: Leave these at the default values.
 
     - Select Create and close.
 
@@ -1062,23 +1067,23 @@ In this exercise you will use the Azure Batch Rendering Service to render a fram
 
 6. Next, configure the Job. Provide the following:
 
-    - Job Name: 3dsmax-arnold
+    - **Job Name: 3dsmax-arnold
 
-    - Input filegroup: Select the fgrp-3dsmax-input file group from the list.
+    - **Input filegroup**: Select the fgrp-3dsmax-input file group from the list.
 
-    - Scene file: Select the file Introduction-to-Arnold\_robot\_final.max in the file dialog that displays.
+    - **Scene file**: Select the file Introduction-to-Arnold\_robot\_final.max in the file dialog that displays.
 
-    - Frame start: Leave at 1, since we just want to render the first frame in this lab.
+    - **Frame start**: Leave at 1, since we just want to render the first frame in this lab.
 
-    - Frame end: Leave at 1, since we just want to render the first frame in this lab.
+    - **Frame end**: Leave at 1, since we just want to render the first frame in this lab.
 
-    - Frame step: Leave at 1, since we just want to render the first frame in this lab.
+    - **Frame step**: Leave at 1, since we just want to render the first frame in this lab.
 
-    - Frame width: Set this to 400. This will render an output that is 400 pixels wide.
+    - **Frame width**: Set this to 400. This will render an output that is 400 pixels wide.
 
-    - Frame height: Set this to 300. This will render an output that is 300 pixels tall.
+    - **Frame height**: Set this to 300. This will render an output that is 300 pixels tall.
 
-    - Output filegroup: Select the fgrp-3dsmax-output file group from the list.
+    - **Output filegroup**: Select the fgrp-3dsmax-output file group from the list.
 
         ![Under Job, fields are set to the previously defined settings.](media/image89.png "Job")
 
