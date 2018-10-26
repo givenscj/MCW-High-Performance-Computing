@@ -709,11 +709,11 @@ In this task, pretend you are switching roles and are now the end user who has b
     
     - Replace the line:
 
-        'if threads and threads > 0:'
+        if threads and threads > 0:
 
         with:
 
-        'if threads and threads >= 1:'
+        if threads and threads >= 1:
 
     - Select Control + O to save the changes, then control + x to exit nano.
     
@@ -1067,7 +1067,7 @@ In this exercise you will use the Azure Batch Rendering Service to render a fram
 
 6. Next, configure the Job. Provide the following:
 
-    - **Job Name: 3dsmax-arnold
+    - **Job Name**: 3dsmax-arnold
 
     - **Input filegroup**: Select the fgrp-3dsmax-input file group from the list.
 
