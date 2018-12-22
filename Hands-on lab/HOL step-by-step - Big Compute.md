@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-September 2018
+December 2018
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -88,9 +88,9 @@ In this exercise, you will setup your environment to work with Azure Batch.
 
 ### Task 1: Setup a Linux Jump Box
 
-1. Using a browser, navigate to the Azure Portal.
+1. Using a browser, navigate to the [Azure Portal](https://portal.azure.com).
 
-2. Select + Create a resource from the left-hand navigation menu.
+2. Select **+ Create a resource** from the left-hand navigation menu.
 
     ![Azure Create a resource icon](media/create-resource.png "Azure Create a resource icon")
 
@@ -98,7 +98,7 @@ In this exercise, you will setup your environment to work with Azure Batch.
 
     ![In the New blade, Ubuntu Server 16.04 LTS is selected.](media/image12.png "New blade")
 
-4. On the Ubuntu Server 16.04 LTS blade, leave the Select a deployment model at Resource Manager and select Create.
+4. On the Ubuntu Server 16.04 LTS blade, leave the Select a deployment model at Resource Manager and select **Create**.
 
     ![Resource Manager is selected in the Select a deployment model section.](media/image13.png "Select a deployment model section")
 
@@ -110,6 +110,7 @@ In this exercise, you will setup your environment to work with Azure Batch.
     - **INSTANCE DETAILS**
         - **Virtual machine name**: Enter "batch-jumpbox".
         - **Region**: Select the region you are using for resources in this hands-on lab.
+        - **Availability options**: Leave set to no infrastructure redundancy required.
         - **Image**: Leave Ubuntu Server 16.04 LTS selected.
         - **Size**: Leave the default value selected (e.g., Standard D2s v3).
     - **ADMINISTRATOR ACCOUNT**
@@ -123,13 +124,13 @@ In this exercise, you will setup your environment to work with Azure Batch.
 
     ![The values specified above are entered into the Create a virutal machine Basics tab.](media/create-vm-jump-box-basics-blade.png "Create a virtual machine Basics tab")
 
-6. Select Next : Disks >.
+6. Select **Next : Disks >**.
 
-7. On the Disks tab, select Standard HDD for the OS disk type, and select Review + create.
+7. On the Disks tab, select Standard HDD for the OS disk type, and select **Review + create**.
 
     ![Standard HDD is selected as the OS disk type on the Create a virtual machine Disks tab.](media/create-vm-jump-box-disks-blade.png "Create a virtual machine Disks tab")
 
-8. On the Create tab, ensure a Validation passed message is displayed, and select Create.
+8. On the Create tab, ensure a Validation passed message is displayed, and select **Create**.
 
     ![Create a virtual machine Review + create tab](media/create-vm-jump-box-create-tab.png "Create a virtual machine Review + create tab")
 
@@ -137,7 +138,7 @@ In this exercise, you will setup your environment to work with Azure Batch.
 
 10. Once the VM is ready, navigate to the blade for the VM in the Azure Portal.
 
-11. In the control bar, select Connect.
+11. In the control bar, select **Connect**.
 
     ![Under Connect, the command to connect to the VM displays.](media/image22.png "SSH command line")
 
@@ -210,43 +211,53 @@ In this exercise, you will setup your environment to work with Azure Batch.
 
 1. Navigate to Azure Portal in the browser.
 
-2. Select + Create a resource.
+2. Select **+ Create a resource**.
 
 3. Search the Marketplace for Batch Service.
 
     ![In the New blade, batch service displays in the search field.](media/image26.png "New blade")
 
-4. In the list, select Batch Service.
+4. In the list, select **Batch Service**.
 
-    ![Under Name in the Everything blade, Batch Service is selected.](media/image27.png "Everything blade")
+    ![Under Name in the Everything blade, Batch Service is selected.](media/create-resource-batch-service.png "Everything blade")
 
-5. Select Create on the Batch Service blade.
+5. Select **Create** on the Batch Service blade.
 
     ![The Batch Service blade displays.](media/image28.png "Batch Service blade")
 
 6. On the New Batch Account blade, specify the following:
 
-    - **Account name**: Provide a name for your new Batch Account. The name you choose must be unique within the Azure region where the account is created (see Location below).
+    - **PROJECT DETAILS**
+        - **Subscription**: Select the subscription in which to create the Batch account.
+        - **Resource group**: Select the existing resource group you created for this lab (hands-on-lab) for your new Batch account.
+    - **INSTANCE DETAILS**
+        - **Account name**: Provide a name for your new Batch Account. The name you choose must be unique within the Azure region where the account is created (see Location below).
+        - **Location**: The Azure region in which to create the Batch account.
+    - **STORAGE ACCOUNT**
+        - Click **Select a storage account**, select **Create new** on the Choose storage account blade, and then enter a globally unique name for the storage account, and leave the remaining values set to their defaults. Select **OK**.
 
-    - **Subscription**: Select the subscription in which to create the Batch account.
+    ![The New Batch account blade is displayed with the values specified above entered into the appropriate fields.](media/create-batch-account.png "New Batch account")
 
-    - **Resource group**: Select the existing resource group you created for this lab (hands-on-lab) for your new Batch account.
+7. Select **Next: Advanced >**.
 
-    - **Location**: The Azure region in which to create the Batch account.
+8. On the Advanced tab, set the following:
 
-    - **Storage account**: Select Create new on the Choose storage account, then enter a globally unique name for the storage account, and leave the remaining values set to their defaults. Click OK.
+    - **POOL ALLOCATION MODE**
+        - **Pool allocation mode**: Set to Batch service.
 
-    - **Pool allocation mode**: Set to Batch service.
+    ![The New Batch account blade advanced tab is displayed with the Pool allocation mode set to Batch service.](media/create-batch-account-advanced.png "New Batch Account Pool Allocation Mode")
 
-        ![The New Batch account blade is displayed with the values specified above entered into the appropriate fields.](media/create-batch-account.png "New Batch account")
+9. Select **Review + create**.
 
-7. Select Create to create the new Batch account. The provisioning should only take a minute.
+10. Ensure the Validate passed message is displayed, and then select **Create** to provision the new Batch account. The provisioning should only take a minute.
+
+    ![Summary blade for creating a new Batch Account with validation passed message displayed.](media/create-batch-account-create.png "Create New Batch Account")
 
 ## Exercise 2: Creating Batch CLI templates and files
 
 Duration: 60 minutes
 
-In this exercise, you will resample video files in scale-out way by using Azure Batch. While there are multiple ways to accomplish this in Azure Batch, in this exercise you will use Batch templates and files, which enable you to perform scale-out execution of command line executables (in this case ffmpeg) without having to write any code.
+In this exercise, you will resample video files in a scale-out way by using Azure Batch. While there are multiple ways to accomplish this in Azure Batch, in this exercise you will use Batch templates and files, which enable you to perform scale-out execution of command line executables (in this case FFmpeg) without having to write any code.
 
 ### Task 1: Connect to Azure Batch with Batch Explorer
 
@@ -274,7 +285,7 @@ In this exercise, you will resample video files in scale-out way by using Azure 
 
 1. Open a browser and navigate to the following URL to preview the high-resolution video you will be down sampling:
 
-    <http://sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4>\
+    <https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_30mb.mp4>\
     ![A screenshot of the Sample video displays.](media/image35.png "Sample video")
 
     (c) copyright 2008, Blender Foundation / www.bigbuckbunny.org
@@ -291,8 +302,7 @@ In this exercise, you will resample video files in scale-out way by using Azure 
 4. Next, download the video you previously saw into this folder by running this command:
 
     ```bash
-    wget http://sample-videos.com/video/mp4/720/big_buck_bunny_720p_30mb.mp4
-
+    wget https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_30mb.mp4
     ```
 
     Make a few copies of the video to create some additional work for the processing we will perform:
@@ -319,7 +329,9 @@ In this exercise, you will resample video files in scale-out way by using Azure 
 
 7. You will see a prompt similar to the following in the SSH terminal:
 
+    ```
     To sign in, use a web browser to open the page https://aka.ms/devicelogin and enter the code BDQGEJR7V to authenticate.
+    ```
 
 8. Open the supplied URL in a browser and then paste in the supplied code:
 
@@ -335,7 +347,7 @@ In this exercise, you will resample video files in scale-out way by using Azure 
 
 11. After logging in, return to SSH prompt. It should update by displaying your list of subscriptions.
 
-    >**Note**: On some SSH clients, pressing ENTER might be required to trigger the update of the screen.
+    > **Note**: On some SSH clients, pressing ENTER might be required to trigger the update of the screen.
 
 12. Select the Subscription that contains your Batch Account by running the following (be sure to substitute your own subscription name or subscription ID):
 
@@ -751,13 +763,11 @@ In this task, you will continue in the role of the end user, this time using the
 
 3. The command will prompt you for the values to use for the parameters, including the jobId and poolId. For these parameters, specify "firstResample" and "resamplePool" respectively.
 
-    ```bash
     The behavior of this command has been altered by the following extension: azure-batch-cli-extensions.
 
     jobId (The name of Azure Batch job): **firstResample**
 
     poolId (The name of Azure Batch pool which runs the job): **resamplePool**
-    ```
 
 4. Return to Batch Explorer to monitor the job.
 
@@ -834,13 +844,14 @@ In this exercise you will configure the resamplePool so that it starts with zero
 4. Before you can add AutoScale formulas, you first need to enable Auto scale, since this pool was created without Auto scale enabled. On the Scale pool blade, set the Mode toggle to Auto scale.
 
     ![Auto scale is selected for Mode.](media/image62.png "Mode option")
+
 5. In order to save the change, you also need to provide a Formula. We'll get to writing an Auto scale formula that actually performs dynamic scaling momentarily, but for now simply enter the following formula which will set your Pool to have 0 nodes.
 
     ```powershell
     $TargetDedicated=0
     ```
 
-6. Select Save.
+6. Select **Save**.
 
     ![Screenshot of the Scale pool blade.](media/image62.png "Scale pool blade")
 
@@ -1071,7 +1082,7 @@ In this exercise you will use the Azure Batch Rendering Service to render a fram
 
     - **Input filegroup**: Select the fgrp-3dsmax-input file group from the list.
 
-    - **Scene file**: Select the file Introduction-to-Arnold\_robot\_final.max in the file dialog that displays.
+    - **Scene file**: Select the file Introduction-to-Arnold_robot_final.max in the file dialog that displays.
 
     - **Frame start**: Leave at 1, since we just want to render the first frame in this lab.
 
@@ -1079,9 +1090,11 @@ In this exercise you will use the Azure Batch Rendering Service to render a fram
 
     - **Frame step**: Leave at 1, since we just want to render the first frame in this lab.
 
-    - **Frame width**: Set this to 400. This will render an output that is 400 pixels wide.
+    - **Additional args**: To render an output that is 400 pixels wide and 300 pixels tall, set this to:
 
-    - **Frame height**: Set this to 300. This will render an output that is 300 pixels tall.
+        ```bash
+        -width:400 -height:300
+        ```
 
     - **Output filegroup**: Select the fgrp-3dsmax-output file group from the list.
 
@@ -1133,7 +1146,7 @@ Before you conclude the lab, you should make sure to cleanup all the resources u
 
 ### Task 1: Cleanup the Lab Resource Group
 
-1. Navigate to the Azure Portal and locate the Resource Group you created for this lab (mcw-lab-big-compute).
+1. Navigate to the Azure Portal and locate the Resource Group you created for this lab (hands-on-lab).
 
 2. Select Delete resource group from the command bar.
 
