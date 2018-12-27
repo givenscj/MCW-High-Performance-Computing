@@ -245,7 +245,6 @@ Directions: Tables reconvene with the larger group to hear the facilitator/SME s
 | Batch Explorer | <https://github.com/Azure/BatchExplorer/releases/> |
 | AzCopy (Linux) | <https://docs.microsoft.com/en-us/azure/storage/storage-use-azcopy-linux/> |
 | Azure Batch Rendering Service | <https://docs.microsoft.com/en-us/azure/batch/batch-rendering-service/> |
-|
 
 **Supplemental Materials**
 
@@ -257,4 +256,3 @@ The following projects may be helpful to you after completing the workshop in un
 | CycleCloud Lab | <https://github.com/azurebigcompute/BigComputeLabs/tree/master/CycleCloud/> |
 | Do Azure Parallel R Package | <https://github.com/Azure/doAzureParallel/> |
 | Big Compute Batch VM | <https://github.com/mkiernan/bigcomputebench/> |
-|
