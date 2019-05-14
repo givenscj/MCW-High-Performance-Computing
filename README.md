@@ -20,13 +20,13 @@ In this workshop, you will setup and configure a scale-out media processing arch
 
 At the end of this workshop, you will have a deeper understanding of how to use the core capabilities of Azure Batch, understand how to author Custom Pool and Job templates, work with Job input and output files, author Batch auto-scale formulas, leverage Batch Explorer and the Azure Portal for management and monitoring, and use Marketplace applications to simplify common big compute tasks, such as 3D rendering.
 
-### Whiteboard Design Session
+### Whiteboard design session
 
 In this whiteboard design session, you will work with a group to design a scale-out media processing solution using big compute techniques in Azure.
 
 At the end of this session, you will be better able to design and recommend big compute solutions that are highly scalable, and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
 
-### Hands-on Lab
+### Hands-on lab
 
 In this hands-on lab, you will implement big compute workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
 
@@ -41,10 +41,6 @@ At the end of this hands-on lab, you will be better able to deploy Azure Batch a
 - Azure Storage Explorer
 - Import/Export Service
 
-## Azure solutions
-
-High Performance Compute
-
 ## Related references
 
-- [MCW](https://github.com/Microsoft/MCW)
+- [MCW](https://microsoftcloudworkshop.com)
