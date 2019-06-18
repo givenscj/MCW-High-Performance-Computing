@@ -1,7 +1,7 @@
 ![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
-Big Compute
+High performance computing
 </div>
 
 <div class="MCWHeader2">
@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-December 2018
+June 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -25,47 +25,47 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- TOC -->
 
-- [Big Compute hands-on lab step-by-step](#big-compute-hands-on-lab-step-by-step)
-  - [Abstract and learning objectives](#abstract-and-learning-objectives)
-  - [Overview](#overview)
-  - [Solution architecture](#solution-architecture)
-  - [Requirements](#requirements)
-  - [Exercise 1: Provision Batch Environment](#exercise-1-provision-batch-environment)
-    - [Task 1: Setup a Linux Jump Box](#task-1-setup-a-linux-jump-box)
-    - [Task 2: Install the Azure CLI and Azure Batch Extensions](#task-2-install-the-azure-cli-and-azure-batch-extensions)
-    - [Task 3: Provision Azure Batch](#task-3-provision-azure-batch)
-  - [Exercise 2: Creating Batch CLI templates and files](#exercise-2-creating-batch-cli-templates-and-files)
-    - [Task 1: Connect to Azure Batch with Batch Explorer](#task-1-connect-to-azure-batch-with-batch-explorer)
-    - [Task 2: Stage the sample videos to process](#task-2-stage-the-sample-videos-to-process)
-    - [Task 3: Verify video uploads](#task-3-verify-video-uploads)
-    - [Task 4: Create an Azure Batch Pool Template](#task-4-create-an-azure-batch-pool-template)
-    - [Task 5: Create an Azure Batch Job Template](#task-5-create-an-azure-batch-job-template)
-  - [Exercise 3: Running a Batch Job](#exercise-3-running-a-batch-job)
-    - [Task 1: Create a Pool using the Azure Batch Pool Template](#task-1-create-a-pool-using-the-azure-batch-pool-template)
-    - [Task 2: Create and Run a Job using the Azure Batch Job Template](#task-2-create-and-run-a-job-using-the-azure-batch-job-template)
-  - [Exercise 4: Scaling a Pool](#exercise-4-scaling-a-pool)
-    - [Task 1: Enable Autoscale on the Pool](#task-1-enable-autoscale-on-the-pool)
-    - [Task 2: Apply an Autoscale Formula](#task-2-apply-an-autoscale-formula)
-    - [Task 3: Trigger and observe Autoscale](#task-3-trigger-and-observe-autoscale)
-  - [Exercise 5: 3D Rendering with the Batch Rending Service](#exercise-5-3d-rendering-with-the-batch-rending-service)
-    - [Task 1: Create the File Groups](#task-1-create-the-file-groups)
-    - [Task 1: Render a 3ds Max Scene](#task-1-render-a-3ds-max-scene)
-  - [After the hands-on lab](#after-the-hands-on-lab)
-    - [Task 1: Cleanup the Lab Resource Group.](#task-1-cleanup-the-lab-resource-group)
+- [High performance computing hands-on lab step-by-step](#High-performance-computing-hands-on-lab-step-by-step)
+  - [Abstract and learning objectives](#Abstract-and-learning-objectives)
+  - [Overview](#Overview)
+  - [Solution architecture](#Solution-architecture)
+  - [Requirements](#Requirements)
+  - [Exercise 1: Provision Batch Environment](#Exercise-1-Provision-Batch-Environment)
+    - [Task 1: Setup a Linux Jump Box](#Task-1-Setup-a-Linux-Jump-Box)
+    - [Task 2: Install the Azure CLI and Azure Batch Extensions](#Task-2-Install-the-Azure-CLI-and-Azure-Batch-Extensions)
+    - [Task 3: Provision Azure Batch](#Task-3-Provision-Azure-Batch)
+  - [Exercise 2: Creating Batch CLI templates and files](#Exercise-2-Creating-Batch-CLI-templates-and-files)
+    - [Task 1: Connect to Azure Batch with Batch Explorer](#Task-1-Connect-to-Azure-Batch-with-Batch-Explorer)
+    - [Task 2: Stage the sample videos to process](#Task-2-Stage-the-sample-videos-to-process)
+    - [Task 3: Verify video uploads](#Task-3-Verify-video-uploads)
+    - [Task 4: Create an Azure Batch Pool Template](#Task-4-Create-an-Azure-Batch-Pool-Template)
+    - [Task 5: Create an Azure Batch Job Template](#Task-5-Create-an-Azure-Batch-Job-Template)
+  - [Exercise 3: Running a Batch Job](#Exercise-3-Running-a-Batch-Job)
+    - [Task 1: Create a Pool using the Azure Batch Pool Template](#Task-1-Create-a-Pool-using-the-Azure-Batch-Pool-Template)
+    - [Task 2: Create and Run a Job using the Azure Batch Job Template](#Task-2-Create-and-Run-a-Job-using-the-Azure-Batch-Job-Template)
+  - [Exercise 4: Scaling a Pool](#Exercise-4-Scaling-a-Pool)
+    - [Task 1: Enable Autoscale on the Pool](#Task-1-Enable-Autoscale-on-the-Pool)
+    - [Task 2: Apply an Autoscale Formula](#Task-2-Apply-an-Autoscale-Formula)
+    - [Task 3: Trigger and observe Autoscale](#Task-3-Trigger-and-observe-Autoscale)
+  - [Exercise 5: 3D Rendering with the Batch Rending Service](#Exercise-5-3D-Rendering-with-the-Batch-Rending-Service)
+    - [Task 1: Create the File Groups](#Task-1-Create-the-File-Groups)
+    - [Task 1: Render a 3ds Max Scene](#Task-1-Render-a-3ds-Max-Scene)
+  - [After the hands-on lab](#After-the-hands-on-lab)
+    - [Task 1: Cleanup the Lab Resource Group](#Task-1-Cleanup-the-Lab-Resource-Group)
 
 <!-- /TOC -->
 
-# Big Compute hands-on lab step-by-step
+# High performance computing hands-on lab step-by-step
 
 ## Abstract and learning objectives
 
-In this hands-on lab, you will implement big compute workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
+In this hands-on lab, you will implement high performance computing workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
 
 At the end of this hands-on lab, you will be better able to deploy Azure Batch and an Azure Batch Pool consisting of Linux Virtual Machines. You will be able to configure the pool of VMs to run the FFmpeg app to process videos across the VM nodes in the pool. You will be able to do this using Batch templates and files, which enable you to perform scale-out execution of command line executables (in this case FFmpeg) without having to write any code.
 
 ## Overview
 
-The Big Compute hands-on lab will enable you to understand how to implement big compute workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
+The high performance computing hands-on lab will enable you to understand how to implement high performance computing workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
 
 ## Solution architecture
 

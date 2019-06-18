@@ -1,7 +1,7 @@
 ![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
-Big Compute
+High performance computing
 </div>
 
 <div class="MCWHeader2">
@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-December 2018
+June 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -26,27 +26,27 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- TOC -->
 
-- [Big Compute whiteboard design session student guide](#big-compute-whiteboard-design-session-student-guide)
-  - [Abstract and learning objectives](#abstract-and-learning-objectives)
-  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-    - [Customer situation](#customer-situation)
-    - [Customer needs](#customer-needs)
-    - [Customer objections](#customer-objections)
-    - [Infographic for common scenarios](#infographic-for-common-scenarios)
-  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-  - [Step 3: Present the solution](#step-3-present-the-solution)
-  - [Wrap-up](#wrap-up)
-  - [Additional references](#additional-references)
+- [High performance computing whiteboard design session student guide](#High-performance-computing-whiteboard-design-session-student-guide)
+  - [Abstract and learning objectives](#Abstract-and-learning-objectives)
+  - [Step 1: Review the customer case study](#Step-1-Review-the-customer-case-study)
+    - [Customer situation](#Customer-situation)
+    - [Customer needs](#Customer-needs)
+    - [Customer objections](#Customer-objections)
+    - [Infographic for common scenarios](#Infographic-for-common-scenarios)
+  - [Step 2: Design a proof of concept solution](#Step-2-Design-a-proof-of-concept-solution)
+  - [Step 3: Present the solution](#Step-3-Present-the-solution)
+  - [Wrap-up](#Wrap-up)
+  - [Additional references](#Additional-references)
 
 <!-- /TOC -->
 
-# Big Compute whiteboard design session student guide
+# High performance computing whiteboard design session student guide
 
 ## Abstract and learning objectives
 
-In this whiteboard design session, you will work with a group to design a scale-out media processing solution using big compute techniques in Azure.
+In this whiteboard design session, you will work with a group to design a scale-out media processing solution using high performance computing techniques in Azure.
 
-At the end of this session, you will be better able to design and recommend big compute solutions that are highly scalable and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
+At the end of this session, you will be better able to design and recommend high performance computing solutions that are highly scalable and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
 
 ## Step 1: Review the customer case study
 
@@ -102,7 +102,7 @@ Thomas Pix, CIO of ThoughtRender is looking to modernize their story. He would l
 
 ### Infographic for common scenarios
 
-High-performance computing (HPC) applications can scale to thousands of compute cores, extend on-premises big compute, or run as a 100% cloud-native solution. This HPC solution is implemented with Azure Batch, which provides job scheduling, auto-scaling of compute resources, and execution management as a platform service (PaaS) that reduces HPC infrastructure code and maintenance.
+High-performance computing (HPC) applications can scale to thousands of compute cores, extend on-premises compute, or run as a 100% cloud-native solution. This HPC solution is implemented with Azure Batch, which provides job scheduling, auto-scaling of compute resources, and execution management as a platform service (PaaS) that reduces HPC infrastructure code and maintenance.
 
 ![In this Common HPC scenario diagram, A Web App and Client app have bi-directional arrows pointing to Batch, which has a bi-directional arrow pointing to Virtual Machines, which has bi-directional arrows pointing to Storage. Microsoft and Linux icons also display.](media/common-scenarios.png "Common HPC scenario diagram")
 
