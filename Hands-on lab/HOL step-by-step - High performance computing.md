@@ -17,7 +17,8 @@ Information in this document, including URL and other Internet Web site referenc
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
-© 2018 Microsoft Corporation. All rights reserved.
+
+© 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -94,11 +95,11 @@ In this exercise, you will setup your environment to work with Azure Batch.
 
     ![Azure Create a resource icon](media/create-resource.png "Azure Create a resource icon")
 
-3. In the Search the Marketplace text box, type "Ubuntu Server 16.04 LTS VM" and select the same in the drop-down list that appears.
+3. In the Search the Marketplace text box, type "Ubuntu Server 18.04 LTS VM" and select the same in the drop-down list that appears.
 
-    ![In the New blade, Ubuntu Server 16.04 LTS is selected.](media/image12.png "New blade")
+    ![In the New blade, Ubuntu Server 18.04 LTS is selected.](media/image12.png "New blade")
 
-4. On the Ubuntu Server 16.04 LTS blade, leave the Select a deployment model at Resource Manager and select **Create**.
+4. On the Ubuntu Server 18.04 LTS blade, select **Create**.
 
     ![Resource Manager is selected in the Select a deployment model section.](media/image13.png "Select a deployment model section")
 
@@ -159,16 +160,23 @@ In this exercise, you will setup your environment to work with Azure Batch.
 2. Within your SSH session, run the following command to prepare for the CLI:.
 
     ```bash
-    echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ xenial main" | \
-             sudo tee /etc/apt/sources.list.d/azure-cli.list
+    curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
+        gpg --dearmor | \
+        sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
+
+    sudo apt-get update
+    sudo apt-get install curl apt-transport-https lsb-release gnupg
+
+    AZ_REPO=$(lsb_release -cs)
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
+    sudo tee /etc/apt/sources.list.d/azure-cli.list
     ```
 
 3. Next, run the following commands to install the Azure CLI:
 
     ```bash
-    sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
-    sudo apt-get install apt-transport-https
-    sudo apt-get update && sudo apt-get install azure-cli
+    sudo apt-get update
+    sudo apt-get install azure-cli
     ```
 
 4. Verify that the Azure CLI is installed by running:
@@ -184,7 +192,7 @@ In this exercise, you will setup your environment to work with Azure Batch.
 6. The Azure CLI includes most of the functionality that you need for Azure Batch. However, new capabilities that are still in preview (such as the Templates and File feature we will use in this lab) are installed by an extension, and are not available from default Azure CLI installation. Run the following command to install the Microsoft Azure Batch Extensions. Note that you can always determine the latest release by visiting <https://github.com/Azure/azure-batch-cli-extensions/releases> and copying the URL for the Python Wheel (.whl) corresponding to the latest release. Use that URL as the value for the Source parameter in the following command:
 
     ```bash
-    az extension add --source https://github.com/Azure/azure-batch-cli-extensions/releases/download/azure-batch-cli-extensions-2.5.0/azure_batch_cli_extensions-2.5.0-py2.py3-none-any.whl
+    az extension add --source https://github.com/Azure/azure-batch-cli-extensions/releases/download/azure-batch-cli-extensions-3.0.4/azure_batch_cli_extensions-3.0.4-py2.py3-none-any.whl
     ```
 
 7. When prompted to install the extension, type Y and press enter.
@@ -202,7 +210,7 @@ In this exercise, you will setup your environment to work with Azure Batch.
       {
         "extensionType": "whl",
         "name": "azure-batch-cli-extensions",
-        "version": "2.5.0"
+        "version": "3.0.4"
       }
     ]
     ```
@@ -745,7 +753,7 @@ In this task, pretend you are switching roles and are now the end user who has b
 
 5. It will take about 2-3 minutes for the Pool to be ready (at which point the resamplePool status will show a fixed 5 instances).
 
-    ![Under Pool status, resamplePool lists five instances.](media/image46.png "Pool status")
+    ![resamplePool lists five instances and a status of ready.](media/image46.png "Pool status")
 
 6. This means the VM nodes in the pool are ready for some work. Continue with the next task to supply some work.
 
@@ -781,7 +789,7 @@ In this task, you will continue in the role of the end user, this time using the
 
 7. Select the Refresh button (![Screenshot of the Refresh icon](media/image49.png "Refresh icon")) periodically until you see the status change from Active to Completed.
 
-    ![On the Batch Explorer dashboard, firstResample information displays.](media/image50.png)
+    ![On the Batch Explorer dashboard, firstResample information displays.](media/image48.png)
 
 8. From the Job dashboard, select the Job statistics panel.
 
@@ -817,7 +825,7 @@ In this task, you will continue in the role of the end user, this time using the
 
 17. In the ribbon of buttons that appears, select the rightmost button with the tool tip "Open in default application" to download and view the resampled version of the video on your local computer.
 
-    ![Under Files, big buck bunny file is selected, and a screenshot of the video displays.](media/image58.png "Video screenshot")
+    ![Under Files, big buck bunny file is selected, and the Open in default application is highlighted.](media/image58.png "Video screenshot")
 
     (c) copyright 2008, Blender Foundation / www.bigbuckbunny.org
 
@@ -871,7 +879,7 @@ We had to enable Auto scale using the portal, but we can also edit the Auto scal
 
     ![On the Pools tab, resamplePool information displays, along with the message that the pool has no nodes.](media/image64.png "Pools tab")
 
-3. Select the Resize button.
+3. Select the Resize button. If you do not see this button, you may need to wait for your pool to finish resizing down to 0 nodes.
 
     ![Screenshot of the Resize button.](media/image65.png "Resize button")
 
@@ -1096,13 +1104,13 @@ In this exercise you will use the Azure Batch Rendering Service to render a fram
         -width:400 -height:300
         ```
 
-    - **Output filegroup**: Select the fgrp-3dsmax-output file group from the list.
+    - **Outputs**: Select the fgrp-3dsmax-output file group from the list.
 
         ![Under Job, fields are set to the previously defined settings.](media/image89.png "Job")
 
-7. Select the submit button to create the Pool and launch the render Job.
+7. Select the Run and close button to create the Pool and launch the render Job.
 
-    ![Screenshot of the Submit button.](media/image90.png "Submit button")
+    ![Screenshot of the Run and close button.](media/image90.png "Run and close")
 
 8. This will take you to the Jobs tab, with your new Job pre-selected.
 

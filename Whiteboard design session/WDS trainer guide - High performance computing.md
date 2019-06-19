@@ -18,7 +18,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2018 Microsoft Corporation. All rights reserved.
+© 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -31,7 +31,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Whiteboard design session flow](#Whiteboard-design-session-flow)
   - [Before the whiteboard design session: How to prepare](#Before-the-whiteboard-design-session-How-to-prepare)
   - [During the whiteboard design session: Tips for an effective whiteboard design session](#During-the-whiteboard-design-session-Tips-for-an-effective-whiteboard-design-session)
-- [Big Compute whiteboard design session student guide](#Big-Compute-whiteboard-design-session-student-guide)
+- [High performance computing whiteboard design session student guide](#High-performance-computing-whiteboard-design-session-student-guide)
   - [Abstract and learning objectives](#Abstract-and-learning-objectives)
   - [Step 1: Review the customer case study](#Step-1-Review-the-customer-case-study)
     - [Customer situation](#Customer-situation)
@@ -42,7 +42,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Step 3: Present the solution](#Step-3-Present-the-solution)
   - [Wrap-up](#Wrap-up)
   - [Additional references](#Additional-references)
-- [Big compute whiteboard design session trainer guide](#Big-compute-whiteboard-design-session-trainer-guide)
+- [High performance computing whiteboard design session trainer guide](#High-performance-computing-whiteboard-design-session-trainer-guide)
   - [Step 1: Review the customer case study](#Step-1-Review-the-customer-case-study-1)
   - [Step 2: Design a proof of concept solution](#Step-2-Design-a-proof-of-concept-solution-1)
   - [Step 3: Present the solution](#Step-3-Present-the-solution-1)
@@ -166,13 +166,13 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 **Wait for responses**. If you ask a question such as, "What's your experience with (fill in the blank)?" then wait. Do not be afraid of a little silence. If you leap into the silence, your participants will feel you are not serious about involving them and will become passive. Give participants a chance to think, and if no one answers, patiently ask again. You will usually get a response.
 
-# Big Compute whiteboard design session student guide
+# High performance computing whiteboard design session student guide
 
 ## Abstract and learning objectives
 
-In this whiteboard design session, you will work with a group to design a scale-out media processing solution using big compute techniques in Azure.
+In this whiteboard design session, you will work with a group to design a scale-out media processing solution using high performance computing techniques in Azure.
 
-At the end of this session, you will be better able to design and recommend big compute solutions that are highly scalable and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
+At the end of this session, you will be better able to design and recommend high performance computing solutions that are highly scalable and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
 
 ## Step 1: Review the customer case study
 
@@ -228,7 +228,7 @@ Thomas Pix, CIO of ThoughtRender is looking to modernize their story. He would l
 
 ### Infographic for common scenarios
 
-High-performance computing (HPC) applications can scale to thousands of compute cores, extend on-premises big compute, or run as a 100% cloud-native solution. This HPC solution is implemented with Azure Batch, which provides job scheduling, auto-scaling of compute resources, and execution management as a platform service (PaaS) that reduces HPC infrastructure code and maintenance.
+High-performance computing (HPC) applications can scale to thousands of compute cores, extend on-premises compute, or run as a 100% cloud-native solution. This HPC solution is implemented with Azure Batch, which provides job scheduling, auto-scaling of compute resources, and execution management as a platform service (PaaS) that reduces HPC infrastructure code and maintenance.
 
 ![In this Common HPC scenario diagram, A Web App and Client app have bi-directional arrows pointing to Batch, which has a bi-directional arrow pointing to Virtual Machines, which has bi-directional arrows pointing to Storage. Microsoft and Linux icons also display.](media/common-scenarios.png "Common HPC scenario diagram")
 
@@ -382,9 +382,9 @@ The following projects may be helpful to you after completing the workshop in un
 | **Description** | **Links** |
 | CycleCloud Lab | <https://github.com/azurebigcompute/BigComputeLabs/tree/master/CycleCloud/> |
 | Do Azure Parallel R Package | <https://github.com/Azure/doAzureParallel/> |
-| Big Compute Batch VM | <https://github.com/mkiernan/bigcomputebench/> |
+| Big Compute Bench VM | <https://github.com/mkiernan/bigcomputebench/> |
 
-# Big compute whiteboard design session trainer guide
+# High performance computing whiteboard design session trainer guide
 
 ## Step 1: Review the customer case study
 
@@ -574,6 +574,6 @@ _Visualization and Remote Workstations_
 
 ## Customer quote (to be read back to the attendees at the end)
 
-"With Big Compute power via Azure at our fingertips, we can control our delivery -- large or small, slow or fast -- for our customers, as well as allowing our team to collaborate and share better, focusing less on fixing hardware, and more on thinking and rendering!"
+"With high performance computing power via Azure at our fingertips, we can control our delivery -- large or small, slow or fast -- for our customers, as well as allowing our team to collaborate and share better, focusing less on fixing hardware, and more on thinking and rendering!"
 
 Thomas Pix, CIO of ThoughtRender
