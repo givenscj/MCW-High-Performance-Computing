@@ -1,4 +1,4 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 High performance computing
@@ -50,7 +50,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Task 3: Trigger and observe Autoscale](#Task-3-Trigger-and-observe-Autoscale)
   - [Exercise 5: 3D Rendering with the Batch Rending Service](#Exercise-5-3D-Rendering-with-the-Batch-Rending-Service)
     - [Task 1: Create the File Groups](#Task-1-Create-the-File-Groups)
-    - [Task 1: Render a 3ds Max Scene](#Task-1-Render-a-3ds-Max-Scene)
+    - [Task 2: Render a 3ds Max Scene](#Task-2-Render-a-3ds-Max-Scene)
   - [After the hands-on lab](#After-the-hands-on-lab)
     - [Task 1: Cleanup the Lab Resource Group](#Task-1-Cleanup-the-Lab-Resource-Group)
 
@@ -108,17 +108,20 @@ In this exercise, you will setup your environment to work with Azure Batch.
     - **PROJECT DETAILS**
         - **Subscription**: Select the subscription you are using for this hands-on lab.
         - **Resource group**: Select Create new and enter "hands-on-lab" for the resource group name.
+        
     - **INSTANCE DETAILS**
         - **Virtual machine name**: Enter "batch-jumpbox".
         - **Region**: Select the region you are using for resources in this hands-on lab.
         - **Availability options**: Leave set to no infrastructure redundancy required.
         - **Image**: Leave Ubuntu Server 16.04 LTS selected.
         - **Size**: Leave the default value selected (e.g., Standard D2s v3).
+        
     - **ADMINISTRATOR ACCOUNT**
         - **Authentication type**: Select Password.
         - **Username**: labuser
         - **Password**: Password.1!!
         - **Login in with Azure Active Directory**: Select Off.
+        
     - **INBOUND PORT RULES**
         - **Public inbound ports**: Select Allow selected ports.
         - **Select inbound ports**: Select SSH from the list.
@@ -157,7 +160,7 @@ In this exercise, you will setup your environment to work with Azure Batch.
 
 1. Install Azure CLI (upgrade CLI if needed).
 
-2. Within your SSH session, run the following command to prepare for the CLI:.
+2. Within your SSH session, run the following command to prepare for the CLI:
 
     ```bash
     curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
@@ -238,9 +241,11 @@ echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO 
     - **PROJECT DETAILS**
         - **Subscription**: Select the subscription in which to create the Batch account.
         - **Resource group**: Select the existing resource group you created for this lab (hands-on-lab) for your new Batch account.
+        
     - **INSTANCE DETAILS**
         - **Account name**: Provide a name for your new Batch Account. The name you choose must be unique within the Azure region where the account is created (see Location below).
         - **Location**: The Azure region in which to create the Batch account.
+        
     - **STORAGE ACCOUNT**
         - Click **Select a storage account**, select **Create new** on the Choose storage account blade, and then enter a globally unique name for the storage account, and leave the remaining values set to their defaults. Select **OK**.
 
@@ -385,7 +390,7 @@ In this exercise, you will resample video files in a scale-out way by using Azur
 
     ![Add account icon](media/image39.png "Add account icon")
 
-3. Leave Add an Azure Account selected and the Azure environment set to Azure and select Sign in...
+3. Leave Add an Azure Account selected, and the Azure environment set to Azure and select Sign in...
 
     ![The Connect to Azure Storage page displays.](media/image40.png "Connect to Azure Storage page")
 
@@ -514,7 +519,7 @@ The first step in building a Batch Job is understanding the command line of the 
     ffmpeg \[options\] \[\[infile options\] -i infile\]\... {\[outfile options\] outfile}\...
     ```
 
-4. Next, resample one of the MP4 files found within the samples directory using ffmpeg. We use the -s option to indicate the desired width and height, followed by the strict option which allows the selection of the native FFmpeg AAC encoder:
+4. Next, resample one of the MP4 files found within the sample's directory using ffmpeg. We use the -s option to indicate the desired width and height, followed by the strict option which allows the selection of the native FFmpeg AAC encoder:
 
     ```bash
     ffmpeg -i big_buck_bunny_720p_30mb.mp4 -y -s "428x240" -strict -2 output.mp4
@@ -699,7 +704,7 @@ The first step in building a Batch Job is understanding the command line of the 
                 },
     ```
 
-13. Save the JSON file by selecting Write Out by typing Control + O followed by Enter to leave the name set to job.json. Use Contol + X to quit nano.
+13. Save the JSON file by selecting Write Out by typing Control + O followed by Enter to leave the name set to job.json. Use Control + X to quit nano.
 
 14. The template for the job is now ready for use by an end user.
 
@@ -913,7 +918,7 @@ We had to enable Auto scale using the portal, but we can also edit the Auto scal
     $NodeDeallocationOption = taskcompletion;
     ```
 
-7. Review the formula. This formula will be evaluated every 5 minutes (as dictated by the Evaluation Interval). The first line gets percentage of telemetry actually reported versus the total amount expected. To understand this, note that Batch samples the telemetry every 30 seconds. In a 5 minute windows, therefore, there are theoretically 10 samples to expect. However, not all samples are collected in time because of various latencies, or they may be lost, leading to a case where fewer than the expected number of samples is collected.
+7. Review the formula. This formula will be evaluated every 5 minutes (as dictated by the Evaluation Interval). The first line gets percentage of telemetry actually reported versus the total amount expected. To understand this, note that Batch samples the telemetry every 30 seconds. In a 5-minute windows, therefore, there are theoretically 10 samples to expect. However, not all samples are collected in time because of various latencies, or they may be lost, leading to a case where fewer than the expected number of samples is collected.
 
     ```powershell
     $samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 5);
@@ -1064,7 +1069,7 @@ In this exercise you will use the Azure Batch Rendering Service to render a fram
 
     ![Under Add a new file group, 3dsmax-output displays.](media/image84.png "Add a new file group section")
 
-### Task 1: Render a 3ds Max Scene
+### Task 2: Render a 3ds Max Scene
 
 1. Select the Gallery tab from the left.
 
@@ -1142,15 +1147,15 @@ In this exercise you will use the Azure Batch Rendering Service to render a fram
 
     ![On the Batch Explorer desktop Pools tab, the pool status is deleting.](media/image97.png "Batch Explorer desktop, Pools tab")
 
-16. In a few moments your Pool will be cleaned up. The output files will remain in Azure Storage.
+16. In a few moments, your Pool will be cleaned up. The output files will remain in Azure Storage.
 
-17. You can Continue to the lab cleanup exercise, you don't have to wait.
+17. You can Continue to the lab cleanup exercise; you don't have to wait.
 
 ## After the hands-on lab
 
 Duration: 10 minutes
 
-Before you conclude the lab, you should make sure to cleanup all the resources used by the lab.
+Before you conclude the lab, you should make sure to clean up all the resources used by the lab.
 
 ### Task 1: Cleanup the Lab Resource Group
 
