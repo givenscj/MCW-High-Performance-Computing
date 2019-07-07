@@ -1,4 +1,4 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 High performance computing
@@ -484,7 +484,7 @@ _Batch Computing_
 
 4. Are GPU based instances needed?
 
-    If the software involved natively makes use of GPUs (e.g., Commercial software RedShift), then yes, these could be needed; typically the NC series (i.e., NVIDIA GPU \"compute\" focused instances). Otherwise, typically, GPUs are not needed.
+    If the software involved natively makes use of GPUs (e.g., Commercial software RedShift), then yes, these could be needed; typically, the NC series (i.e., NVIDIA GPU \"compute\" focused instances). Otherwise, typically, GPUs are not needed.
 
 5. How would you guide ThoughtRender to load data so it can be processed by the rendering compute workload?
 
@@ -496,7 +496,7 @@ _Batch Computing_
 
 7. Where will this data be stored?
 
-    Typically data can be stored on a file share (e.g., SMB). During a compute run, it may be more practical and performant to copy/store this data on a parallel filesystem (e.g., Lustre or BeeGFS), or to local SSD disk on the compute nodes, typically described as "scratch" disk.
+    Typically, data can be stored on a file share (e.g., SMB). During a compute run, it may be more practical and performant to copy/store this data on a parallel filesystem (e.g., Lustre or BeeGFS), or to local SSD disk on the compute nodes, typically described as "scratch" disk.
 
 8. Will this data be stored on compute instances during a batch run? Would you store data on each compute node working in a batch, or would you store data in a shared area?
 
@@ -524,7 +524,7 @@ _Visualization and Remote Workstations_
 
 1. Are special types of compute instances needed for remote workstations in Azure?
 
-    Yes, the "NV" (NVIDIA Visualisation) compute instances should be used. These contain special NVIDIA GRID technology graphics cards (e.g., NVIDIA M60), specialized for visualizations and remote workstation use.
+    Yes, the "NV" (NVIDIA Visualization) compute instances should be used. These contain special NVIDIA GRID technology graphics cards (e.g., NVIDIA M60), specialized for visualizations and remote workstation use.
 
 2. Is a special type of software required for client access? Could users simply use remote desktop? Would this perform the way ThoughtRender (or their customers) would like it to?
 
@@ -558,7 +558,7 @@ _Visualization and Remote Workstations_
 
 3. We heard Microsoft does Linux now. But how true is this? Will it work with our chosen Linux version?
 
-    Yes. Microsoft loves Linux! A commitment has been made by Microsoft to make Linux (and wider Open Source technologies) "a first class citizen" on Azure. Microsoft has relationships with the major Enterprise Linux vendors (i.e., Red Hat, SUSE, Canonical), at various levels and teams, and specific integrations. For example, Microsoft and Red Hat have a relationship (2017) such that you can call Microsoft with a Red Hat query, and have this handled by Red Hat support staff working in Microsoft support centers. You can choose to run Azure Marketplace images of various Linux distributions/versions, and you can also BYOL (Bring Your Own License) for Enterprise Linux versions you own.
+    Yes. Microsoft loves Linux! A commitment has been made by Microsoft to make Linux (and wider Open Source technologies) "a first-class citizen" on Azure. Microsoft has relationships with the major Enterprise Linux vendors (i.e., Red Hat, SUSE, Canonical), at various levels and teams, and specific integrations. For example, Microsoft and Red Hat have a relationship (2017) such that you can call Microsoft with a Red Hat query, and have this handled by Red Hat support staff working in Microsoft support centers. You can choose to run Azure Marketplace images of various Linux distributions/versions, and you can also BYOL (Bring Your Own License) for Enterprise Linux versions you own.
 
 4. We have petabytes of data on-premises. It would cost us a fortune and take ages to move this to the cloud!
 
