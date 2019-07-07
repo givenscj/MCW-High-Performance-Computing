@@ -16,19 +16,19 @@ They believe that bursting jobs to the cloud could help them deliver bigger jobs
 
 ### Workshop
 
-In this workshop, you will setup and configure a scale-out media processing architecture using Azure Batch. You'll discover how to use big compute (scale out compute, embarrassingly parallel processing) techniques without having to write a lot of code, and learn how these tasks can be accomplished declaratively.
+In this workshop, you will setup and configure a scale-out media processing architecture using Azure Batch. You'll discover how to use high performance computing (scale out compute, embarrassingly parallel processing) techniques without having to write a lot of code, and learn how these tasks can be accomplished declaratively.
 
 At the end of this workshop, you will have a deeper understanding of how to use the core capabilities of Azure Batch, understand how to author Custom Pool and Job templates, work with Job input and output files, author Batch auto-scale formulas, leverage Batch Explorer and the Azure Portal for management and monitoring, and use Marketplace applications to simplify common big compute tasks, such as 3D rendering.
 
 ### Whiteboard design session
 
-In this whiteboard design session, you will work with a group to design a scale-out media processing solution using big compute techniques in Azure.
+In this whiteboard design session, you will work with a group to design a scale-out media processing solution using high performance computing techniques in Azure.
 
-At the end of this session, you will be better able to design and recommend big compute solutions that are highly scalable, and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
+At the end of this session, you will be better able to design and recommend high performance computing solutions that are highly scalable, and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
 
 ### Hands-on lab
 
-In this hands-on lab, you will implement big compute workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
+In this hands-on lab, you will implement high performance computing workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
 
 At the end of this hands-on lab, you will be better able to deploy Azure Batch and an Azure Batch Pool consisting of Linux Virtual Machines. You will be able to configure the pool of VMs to run the FFmpeg app to process videos across the VM nodes in the pool. You will be able to do this using Batch templates and files, which enable you to perform scale-out execution of command line executables (in this case FFmpeg) without having to write any code.
 
