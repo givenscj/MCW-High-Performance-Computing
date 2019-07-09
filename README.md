@@ -22,13 +22,13 @@ At the end of this workshop, you will have a deeper understanding of how to use 
 
 ### Whiteboard design session
 
-In this whiteboard design session, you will work with a group to design a scale-out media processing solution using High Performance Computing techniques in Azure.
+In this whiteboard design session, you will work with a group to design a scale-out media processing solution using High Performance Computing (HPC) techniques in Azure.
 
-At the end of this session, you will be better able to design and recommend high performance computing solutions that are highly scalable, and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
+At the end of this session, you will be better able to design and recommend High Performance Computing solutions that are highly scalable, and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
 
 ### Hands-on lab
 
-In this hands-on lab, you will implement High Performance Computing workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
+In this hands-on lab, you will implement High Performance Computing (HPC) workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
 
 At the end of this hands-on lab, you will be better able to deploy Azure Batch and an Azure Batch Pool consisting of Linux Virtual Machines. You will be able to configure the pool of VMs to run the FFmpeg app to process videos across the VM nodes in the pool. You will be able to do this using Batch templates and files, which enable you to perform scale-out execution of command line executables (in this case FFmpeg) without having to write any code.
 
