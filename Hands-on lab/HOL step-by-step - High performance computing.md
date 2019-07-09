@@ -171,8 +171,8 @@ In this exercise, you will setup your environment to work with Azure Batch.
     sudo apt-get install curl apt-transport-https lsb-release gnupg
 
     AZ_REPO=$(lsb_release -cs)
-echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
-    sudo tee /etc/apt/sources.list.d/azure-cli.list
+    echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
+        sudo tee /etc/apt/sources.list.d/azure-cli.list
     ```
 
 3. Next, run the following commands to install the Azure CLI:
