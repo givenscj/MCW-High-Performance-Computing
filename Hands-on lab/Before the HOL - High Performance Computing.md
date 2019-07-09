@@ -1,7 +1,7 @@
 ![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
-High performance computing
+High Performance Computing
 </div>
 
 <div class="MCWHeader2">
@@ -26,7 +26,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- TOC -->
 
-- [High performance computing before the hands-on lab setup guide](#High-performance-computing-before-the-hands-on-lab-setup-guide)
+- [High Performance Computing before the hands-on lab setup guide](#High-performance-computing-before-the-hands-on-lab-setup-guide)
   - [Requirements](#Requirements)
   - [Before the hands-on lab](#Before-the-hands-on-lab)
     - [Task 1: Download and Install Batch Explorer](#Task-1-Download-and-Install-Batch-Explorer)
@@ -34,7 +34,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- /TOC -->
 
-# High performance computing before the hands-on lab setup guide
+# High Performance Computing before the hands-on lab setup guide
 
 ## Requirements
 

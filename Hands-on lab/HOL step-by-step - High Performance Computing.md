@@ -1,7 +1,7 @@
 ![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
-High performance computing
+High Performance Computing
 </div>
 
 <div class="MCWHeader2">
@@ -26,7 +26,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- TOC -->
 
-- [High performance computing hands-on lab step-by-step](#High-performance-computing-hands-on-lab-step-by-step)
+- [High Performance Computing hands-on lab step-by-step](#High-performance-computing-hands-on-lab-step-by-step)
   - [Abstract and learning objectives](#Abstract-and-learning-objectives)
   - [Overview](#Overview)
   - [Solution architecture](#Solution-architecture)
@@ -56,17 +56,17 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- /TOC -->
 
-# High performance computing hands-on lab step-by-step
+# High Performance Computing hands-on lab step-by-step
 
 ## Abstract and learning objectives
 
-In this hands-on lab, you will implement high performance computing workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
+In this hands-on lab, you will implement High Performance Computing (HPC) workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
 
 At the end of this hands-on lab, you will be better able to deploy Azure Batch and an Azure Batch Pool consisting of Linux Virtual Machines. You will be able to configure the pool of VMs to run the FFmpeg app to process videos across the VM nodes in the pool. You will be able to do this using Batch templates and files, which enable you to perform scale-out execution of command line executables (in this case FFmpeg) without having to write any code.
 
 ## Overview
 
-The high performance computing hands-on lab will enable you to understand how to implement high performance computing workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
+The High Performance Computing hands-on lab will enable you to understand how to implement High Performance Computing workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
 
 ## Solution architecture
 
