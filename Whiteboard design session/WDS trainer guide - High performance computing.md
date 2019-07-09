@@ -1,7 +1,7 @@
 ![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
-High performance computing
+High Performance Computing
 </div>
 
 <div class="MCWHeader2">
@@ -31,7 +31,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Whiteboard design session flow](#Whiteboard-design-session-flow)
   - [Before the whiteboard design session: How to prepare](#Before-the-whiteboard-design-session-How-to-prepare)
   - [During the whiteboard design session: Tips for an effective whiteboard design session](#During-the-whiteboard-design-session-Tips-for-an-effective-whiteboard-design-session)
-- [High performance computing whiteboard design session student guide](#High-performance-computing-whiteboard-design-session-student-guide)
+- [High Performance Computing whiteboard design session student guide](#High-performance-computing-whiteboard-design-session-student-guide)
   - [Abstract and learning objectives](#Abstract-and-learning-objectives)
   - [Step 1: Review the customer case study](#Step-1-Review-the-customer-case-study)
     - [Customer situation](#Customer-situation)
@@ -42,7 +42,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
   - [Step 3: Present the solution](#Step-3-Present-the-solution)
   - [Wrap-up](#Wrap-up)
   - [Additional references](#Additional-references)
-- [High performance computing whiteboard design session trainer guide](#High-performance-computing-whiteboard-design-session-trainer-guide)
+- [High Performance Computing whiteboard design session trainer guide](#High-performance-computing-whiteboard-design-session-trainer-guide)
   - [Step 1: Review the customer case study](#Step-1-Review-the-customer-case-study-1)
   - [Step 2: Design a proof of concept solution](#Step-2-Design-a-proof-of-concept-solution-1)
   - [Step 3: Present the solution](#Step-3-Present-the-solution-1)
@@ -166,13 +166,13 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 **Wait for responses**. If you ask a question such as, "What's your experience with (fill in the blank)?" then wait. Do not be afraid of a little silence. If you leap into the silence, your participants will feel you are not serious about involving them and will become passive. Give participants a chance to think, and if no one answers, patiently ask again. You will usually get a response.
 
-# High performance computing whiteboard design session student guide
+# High Performance Computing whiteboard design session student guide
 
 ## Abstract and learning objectives
 
-In this whiteboard design session, you will work with a group to design a scale-out media processing solution using high performance computing techniques in Azure.
+In this whiteboard design session, you will work with a group to design a scale-out media processing solution using High Performance Computing (HPC) techniques in Azure.
 
-At the end of this session, you will be better able to design and recommend high performance computing solutions that are highly scalable and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
+At the end of this session, you will be better able to design and recommend High Performance Computing solutions that are highly scalable and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
 
 ## Step 1: Review the customer case study
 
@@ -384,7 +384,7 @@ The following projects may be helpful to you after completing the workshop in un
 | Do Azure Parallel R Package | <https://github.com/Azure/doAzureParallel/> |
 | Big Compute Bench VM | <https://github.com/mkiernan/bigcomputebench/> |
 
-# High performance computing whiteboard design session trainer guide
+# High Performance Computing whiteboard design session trainer guide
 
 ## Step 1: Review the customer case study
 
@@ -574,6 +574,6 @@ _Visualization and Remote Workstations_
 
 ## Customer quote (to be read back to the attendees at the end)
 
-"With high performance computing power via Azure at our fingertips, we can control our delivery -- large or small, slow or fast -- for our customers, as well as allowing our team to collaborate and share better, focusing less on fixing hardware, and more on thinking and rendering!"
+"With High Performance Computing power via Azure at our fingertips, we can control our delivery -- large or small, slow or fast -- for our customers, as well as allowing our team to collaborate and share better, focusing less on fixing hardware, and more on thinking and rendering!"
 
 Thomas Pix, CIO of ThoughtRender
