@@ -1,7 +1,7 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
-Big Compute
+High performance computing
 </div>
 
 <div class="MCWHeader2">
@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-December 2018
+June 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -18,7 +18,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2018 Microsoft Corporation. All rights reserved.
+© 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -26,31 +26,31 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- TOC -->
 
-- [Trainer information](#trainer-information)
-  - [Role of the trainer](#role-of-the-trainer)
-  - [Whiteboard design session flow](#whiteboard-design-session-flow)
-  - [Before the whiteboard design session: How to prepare](#before-the-whiteboard-design-session-how-to-prepare)
-  - [During the whiteboard design session: Tips for an effective whiteboard design session](#during-the-whiteboard-design-session-tips-for-an-effective-whiteboard-design-session)
-- [Big Compute whiteboard design session student guide](#big-compute-whiteboard-design-session-student-guide)
-  - [Abstract and learning objectives](#abstract-and-learning-objectives)
-  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
-    - [Customer situation](#customer-situation)
-    - [Customer needs](#customer-needs)
-    - [Customer objections](#customer-objections)
-    - [Infographic for common scenarios](#infographic-for-common-scenarios)
-  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-  - [Step 3: Present the solution](#step-3-present-the-solution)
-  - [Wrap-up](#wrap-up)
-  - [Additional references](#additional-references)
-- [Big compute whiteboard design session trainer guide](#big-compute-whiteboard-design-session-trainer-guide)
-  - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
-  - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
-  - [Step 3: Present the solution](#step-3-present-the-solution-1)
-  - [Wrap-up](#wrap-up-1)
-  - [Preferred target audience](#preferred-target-audience)
-  - [Preferred solution](#preferred-solution)
-  - [Checklist of preferred objection handling](#checklist-of-preferred-objection-handling)
-  - [Customer quote (to be read back to the attendees at the end)](#customer-quote-to-be-read-back-to-the-attendees-at-the-end)
+- [Trainer information](#Trainer-information)
+  - [Role of the trainer](#Role-of-the-trainer)
+  - [Whiteboard design session flow](#Whiteboard-design-session-flow)
+  - [Before the whiteboard design session: How to prepare](#Before-the-whiteboard-design-session-How-to-prepare)
+  - [During the whiteboard design session: Tips for an effective whiteboard design session](#During-the-whiteboard-design-session-Tips-for-an-effective-whiteboard-design-session)
+- [High performance computing whiteboard design session student guide](#High-performance-computing-whiteboard-design-session-student-guide)
+  - [Abstract and learning objectives](#Abstract-and-learning-objectives)
+  - [Step 1: Review the customer case study](#Step-1-Review-the-customer-case-study)
+    - [Customer situation](#Customer-situation)
+    - [Customer needs](#Customer-needs)
+    - [Customer objections](#Customer-objections)
+    - [Infographic for common scenarios](#Infographic-for-common-scenarios)
+  - [Step 2: Design a proof of concept solution](#Step-2-Design-a-proof-of-concept-solution)
+  - [Step 3: Present the solution](#Step-3-Present-the-solution)
+  - [Wrap-up](#Wrap-up)
+  - [Additional references](#Additional-references)
+- [High performance computing whiteboard design session trainer guide](#High-performance-computing-whiteboard-design-session-trainer-guide)
+  - [Step 1: Review the customer case study](#Step-1-Review-the-customer-case-study-1)
+  - [Step 2: Design a proof of concept solution](#Step-2-Design-a-proof-of-concept-solution-1)
+  - [Step 3: Present the solution](#Step-3-Present-the-solution-1)
+  - [Wrap-up](#Wrap-up-1)
+  - [Preferred target audience](#Preferred-target-audience)
+  - [Preferred solution](#Preferred-solution)
+  - [Checklist of preferred objection handling](#Checklist-of-preferred-objection-handling)
+  - [Customer quote (to be read back to the attendees at the end)](#Customer-quote-to-be-read-back-to-the-attendees-at-the-end)
 
 <!-- /TOC -->
 
@@ -166,13 +166,13 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 **Wait for responses**. If you ask a question such as, "What's your experience with (fill in the blank)?" then wait. Do not be afraid of a little silence. If you leap into the silence, your participants will feel you are not serious about involving them and will become passive. Give participants a chance to think, and if no one answers, patiently ask again. You will usually get a response.
 
-# Big Compute whiteboard design session student guide
+# High performance computing whiteboard design session student guide
 
 ## Abstract and learning objectives
 
-In this whiteboard design session, you will work with a group to design a scale-out media processing solution using big compute techniques in Azure.
+In this whiteboard design session, you will work with a group to design a scale-out media processing solution using high performance computing techniques in Azure.
 
-At the end of this session, you will be better able to design and recommend big compute solutions that are highly scalable and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
+At the end of this session, you will be better able to design and recommend high performance computing solutions that are highly scalable and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
 
 ## Step 1: Review the customer case study
 
@@ -228,7 +228,7 @@ Thomas Pix, CIO of ThoughtRender is looking to modernize their story. He would l
 
 ### Infographic for common scenarios
 
-High-performance computing (HPC) applications can scale to thousands of compute cores, extend on-premises big compute, or run as a 100% cloud-native solution. This HPC solution is implemented with Azure Batch, which provides job scheduling, auto-scaling of compute resources, and execution management as a platform service (PaaS) that reduces HPC infrastructure code and maintenance.
+High-performance computing (HPC) applications can scale to thousands of compute cores, extend on-premises compute, or run as a 100% cloud-native solution. This HPC solution is implemented with Azure Batch, which provides job scheduling, auto-scaling of compute resources, and execution management as a platform service (PaaS) that reduces HPC infrastructure code and maintenance.
 
 ![In this Common HPC scenario diagram, A Web App and Client app have bi-directional arrows pointing to Batch, which has a bi-directional arrow pointing to Virtual Machines, which has bi-directional arrows pointing to Storage. Microsoft and Linux icons also display.](media/common-scenarios.png "Common HPC scenario diagram")
 
@@ -382,9 +382,9 @@ The following projects may be helpful to you after completing the workshop in un
 | **Description** | **Links** |
 | CycleCloud Lab | <https://github.com/azurebigcompute/BigComputeLabs/tree/master/CycleCloud/> |
 | Do Azure Parallel R Package | <https://github.com/Azure/doAzureParallel/> |
-| Big Compute Batch VM | <https://github.com/mkiernan/bigcomputebench/> |
+| Big Compute Bench VM | <https://github.com/mkiernan/bigcomputebench/> |
 
-# Big compute whiteboard design session trainer guide
+# High performance computing whiteboard design session trainer guide
 
 ## Step 1: Review the customer case study
 
@@ -484,7 +484,7 @@ _Batch Computing_
 
 4. Are GPU based instances needed?
 
-    If the software involved natively makes use of GPUs (e.g., Commercial software RedShift), then yes, these could be needed; typically the NC series (i.e., NVIDIA GPU \"compute\" focused instances). Otherwise, typically, GPUs are not needed.
+    If the software involved natively makes use of GPUs (e.g., Commercial software RedShift), then yes, these could be needed; typically, the NC series (i.e., NVIDIA GPU \"compute\" focused instances). Otherwise, typically, GPUs are not needed.
 
 5. How would you guide ThoughtRender to load data so it can be processed by the rendering compute workload?
 
@@ -496,7 +496,7 @@ _Batch Computing_
 
 7. Where will this data be stored?
 
-    Typically data can be stored on a file share (e.g., SMB). During a compute run, it may be more practical and performant to copy/store this data on a parallel filesystem (e.g., Lustre or BeeGFS), or to local SSD disk on the compute nodes, typically described as "scratch" disk.
+    Typically, data can be stored on a file share (e.g., SMB). During a compute run, it may be more practical and performant to copy/store this data on a parallel filesystem (e.g., Lustre or BeeGFS), or to local SSD disk on the compute nodes, typically described as "scratch" disk.
 
 8. Will this data be stored on compute instances during a batch run? Would you store data on each compute node working in a batch, or would you store data in a shared area?
 
@@ -524,7 +524,7 @@ _Visualization and Remote Workstations_
 
 1. Are special types of compute instances needed for remote workstations in Azure?
 
-    Yes, the "NV" (NVIDIA Visualisation) compute instances should be used. These contain special NVIDIA GRID technology graphics cards (e.g., NVIDIA M60), specialized for visualizations and remote workstation use.
+    Yes, the "NV" (NVIDIA Visualization) compute instances should be used. These contain special NVIDIA GRID technology graphics cards (e.g., NVIDIA M60), specialized for visualizations and remote workstation use.
 
 2. Is a special type of software required for client access? Could users simply use remote desktop? Would this perform the way ThoughtRender (or their customers) would like it to?
 
@@ -558,7 +558,7 @@ _Visualization and Remote Workstations_
 
 3. We heard Microsoft does Linux now. But how true is this? Will it work with our chosen Linux version?
 
-    Yes. Microsoft loves Linux! A commitment has been made by Microsoft to make Linux (and wider Open Source technologies) "a first class citizen" on Azure. Microsoft has relationships with the major Enterprise Linux vendors (i.e., Red Hat, SUSE, Canonical), at various levels and teams, and specific integrations. For example, Microsoft and Red Hat have a relationship (2017) such that you can call Microsoft with a Red Hat query, and have this handled by Red Hat support staff working in Microsoft support centers. You can choose to run Azure Marketplace images of various Linux distributions/versions, and you can also BYOL (Bring Your Own License) for Enterprise Linux versions you own.
+    Yes. Microsoft loves Linux! A commitment has been made by Microsoft to make Linux (and wider Open Source technologies) "a first-class citizen" on Azure. Microsoft has relationships with the major Enterprise Linux vendors (i.e., Red Hat, SUSE, Canonical), at various levels and teams, and specific integrations. For example, Microsoft and Red Hat have a relationship (2017) such that you can call Microsoft with a Red Hat query, and have this handled by Red Hat support staff working in Microsoft support centers. You can choose to run Azure Marketplace images of various Linux distributions/versions, and you can also BYOL (Bring Your Own License) for Enterprise Linux versions you own.
 
 4. We have petabytes of data on-premises. It would cost us a fortune and take ages to move this to the cloud!
 
@@ -574,6 +574,6 @@ _Visualization and Remote Workstations_
 
 ## Customer quote (to be read back to the attendees at the end)
 
-"With Big Compute power via Azure at our fingertips, we can control our delivery -- large or small, slow or fast -- for our customers, as well as allowing our team to collaborate and share better, focusing less on fixing hardware, and more on thinking and rendering!"
+"With high performance computing power via Azure at our fingertips, we can control our delivery -- large or small, slow or fast -- for our customers, as well as allowing our team to collaborate and share better, focusing less on fixing hardware, and more on thinking and rendering!"
 
 Thomas Pix, CIO of ThoughtRender

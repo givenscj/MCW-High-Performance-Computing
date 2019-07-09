@@ -1,7 +1,7 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
-Big Compute
+High performance computing
 </div>
 
 <div class="MCWHeader2">
@@ -9,7 +9,7 @@ Hands-on lab step-by-step
 </div>
 
 <div class="MCWHeader3">
-December 2018
+June 2019
 </div>
 
 Information in this document, including URL and other Internet Web site references, is subject to change without notice. Unless otherwise noted, the example companies, organizations, products, domain names, e-mail addresses, logos, people, places, and events depicted herein are fictitious, and no association with any real company, organization, product, domain name, e-mail address, logo, person, place or event is intended or should be inferred. Complying with all applicable copyright laws is the responsibility of the user. Without limiting the rights under copyright, no part of this document may be reproduced, stored in or introduced into a retrieval system, or transmitted in any form or by any means (electronic, mechanical, photocopying, recording, or otherwise), or for any purpose, without the express written permission of Microsoft Corporation.
@@ -17,7 +17,8 @@ Information in this document, including URL and other Internet Web site referenc
 Microsoft may have patents, patent applications, trademarks, copyrights, or other intellectual property rights covering subject matter in this document. Except as expressly provided in any written license agreement from Microsoft, the furnishing of this document does not give you any license to these patents, trademarks, copyrights, or other intellectual property.
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
-© 2018 Microsoft Corporation. All rights reserved.
+
+© 2019 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -25,47 +26,47 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- TOC -->
 
-- [Big Compute hands-on lab step-by-step](#big-compute-hands-on-lab-step-by-step)
-  - [Abstract and learning objectives](#abstract-and-learning-objectives)
-  - [Overview](#overview)
-  - [Solution architecture](#solution-architecture)
-  - [Requirements](#requirements)
-  - [Exercise 1: Provision Batch Environment](#exercise-1-provision-batch-environment)
-    - [Task 1: Setup a Linux Jump Box](#task-1-setup-a-linux-jump-box)
-    - [Task 2: Install the Azure CLI and Azure Batch Extensions](#task-2-install-the-azure-cli-and-azure-batch-extensions)
-    - [Task 3: Provision Azure Batch](#task-3-provision-azure-batch)
-  - [Exercise 2: Creating Batch CLI templates and files](#exercise-2-creating-batch-cli-templates-and-files)
-    - [Task 1: Connect to Azure Batch with Batch Explorer](#task-1-connect-to-azure-batch-with-batch-explorer)
-    - [Task 2: Stage the sample videos to process](#task-2-stage-the-sample-videos-to-process)
-    - [Task 3: Verify video uploads](#task-3-verify-video-uploads)
-    - [Task 4: Create an Azure Batch Pool Template](#task-4-create-an-azure-batch-pool-template)
-    - [Task 5: Create an Azure Batch Job Template](#task-5-create-an-azure-batch-job-template)
-  - [Exercise 3: Running a Batch Job](#exercise-3-running-a-batch-job)
-    - [Task 1: Create a Pool using the Azure Batch Pool Template](#task-1-create-a-pool-using-the-azure-batch-pool-template)
-    - [Task 2: Create and Run a Job using the Azure Batch Job Template](#task-2-create-and-run-a-job-using-the-azure-batch-job-template)
-  - [Exercise 4: Scaling a Pool](#exercise-4-scaling-a-pool)
-    - [Task 1: Enable Autoscale on the Pool](#task-1-enable-autoscale-on-the-pool)
-    - [Task 2: Apply an Autoscale Formula](#task-2-apply-an-autoscale-formula)
-    - [Task 3: Trigger and observe Autoscale](#task-3-trigger-and-observe-autoscale)
-  - [Exercise 5: 3D Rendering with the Batch Rending Service](#exercise-5-3d-rendering-with-the-batch-rending-service)
-    - [Task 1: Create the File Groups](#task-1-create-the-file-groups)
-    - [Task 1: Render a 3ds Max Scene](#task-1-render-a-3ds-max-scene)
-  - [After the hands-on lab](#after-the-hands-on-lab)
-    - [Task 1: Cleanup the Lab Resource Group.](#task-1-cleanup-the-lab-resource-group)
+- [High performance computing hands-on lab step-by-step](#High-performance-computing-hands-on-lab-step-by-step)
+  - [Abstract and learning objectives](#Abstract-and-learning-objectives)
+  - [Overview](#Overview)
+  - [Solution architecture](#Solution-architecture)
+  - [Requirements](#Requirements)
+  - [Exercise 1: Provision Batch Environment](#Exercise-1-Provision-Batch-Environment)
+    - [Task 1: Setup a Linux Jump Box](#Task-1-Setup-a-Linux-Jump-Box)
+    - [Task 2: Install the Azure CLI and Azure Batch Extensions](#Task-2-Install-the-Azure-CLI-and-Azure-Batch-Extensions)
+    - [Task 3: Provision Azure Batch](#Task-3-Provision-Azure-Batch)
+  - [Exercise 2: Creating Batch CLI templates and files](#Exercise-2-Creating-Batch-CLI-templates-and-files)
+    - [Task 1: Connect to Azure Batch with Batch Explorer](#Task-1-Connect-to-Azure-Batch-with-Batch-Explorer)
+    - [Task 2: Stage the sample videos to process](#Task-2-Stage-the-sample-videos-to-process)
+    - [Task 3: Verify video uploads](#Task-3-Verify-video-uploads)
+    - [Task 4: Create an Azure Batch Pool Template](#Task-4-Create-an-Azure-Batch-Pool-Template)
+    - [Task 5: Create an Azure Batch Job Template](#Task-5-Create-an-Azure-Batch-Job-Template)
+  - [Exercise 3: Running a Batch Job](#Exercise-3-Running-a-Batch-Job)
+    - [Task 1: Create a Pool using the Azure Batch Pool Template](#Task-1-Create-a-Pool-using-the-Azure-Batch-Pool-Template)
+    - [Task 2: Create and Run a Job using the Azure Batch Job Template](#Task-2-Create-and-Run-a-Job-using-the-Azure-Batch-Job-Template)
+  - [Exercise 4: Scaling a Pool](#Exercise-4-Scaling-a-Pool)
+    - [Task 1: Enable Autoscale on the Pool](#Task-1-Enable-Autoscale-on-the-Pool)
+    - [Task 2: Apply an Autoscale Formula](#Task-2-Apply-an-Autoscale-Formula)
+    - [Task 3: Trigger and observe Autoscale](#Task-3-Trigger-and-observe-Autoscale)
+  - [Exercise 5: 3D Rendering with the Batch Rending Service](#Exercise-5-3D-Rendering-with-the-Batch-Rending-Service)
+    - [Task 1: Create the File Groups](#Task-1-Create-the-File-Groups)
+    - [Task 2: Render a 3ds Max Scene](#Task-2-Render-a-3ds-Max-Scene)
+  - [After the hands-on lab](#After-the-hands-on-lab)
+    - [Task 1: Cleanup the Lab Resource Group](#Task-1-Cleanup-the-Lab-Resource-Group)
 
 <!-- /TOC -->
 
-# Big Compute hands-on lab step-by-step
+# High performance computing hands-on lab step-by-step
 
 ## Abstract and learning objectives
 
-In this hands-on lab, you will implement big compute workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
+In this hands-on lab, you will implement high performance computing workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
 
 At the end of this hands-on lab, you will be better able to deploy Azure Batch and an Azure Batch Pool consisting of Linux Virtual Machines. You will be able to configure the pool of VMs to run the FFmpeg app to process videos across the VM nodes in the pool. You will be able to do this using Batch templates and files, which enable you to perform scale-out execution of command line executables (in this case FFmpeg) without having to write any code.
 
 ## Overview
 
-The Big Compute hands-on lab will enable you to understand how to implement big compute workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
+The high performance computing hands-on lab will enable you to understand how to implement high performance computing workloads targeted at 3D rendering and media processing in Azure using Azure Batch and Azure Storage.
 
 ## Solution architecture
 
@@ -94,11 +95,11 @@ In this exercise, you will setup your environment to work with Azure Batch.
 
     ![Azure Create a resource icon](media/create-resource.png "Azure Create a resource icon")
 
-3. In the Search the Marketplace text box, type "Ubuntu Server 16.04 LTS VM" and select the same in the drop-down list that appears.
+3. In the Search the Marketplace text box, type "Ubuntu Server 18.04 LTS VM" and select the same in the drop-down list that appears.
 
-    ![In the New blade, Ubuntu Server 16.04 LTS is selected.](media/image12.png "New blade")
+    ![In the New blade, Ubuntu Server 18.04 LTS is selected.](media/image12.png "New blade")
 
-4. On the Ubuntu Server 16.04 LTS blade, leave the Select a deployment model at Resource Manager and select **Create**.
+4. On the Ubuntu Server 18.04 LTS blade, select **Create**.
 
     ![Resource Manager is selected in the Select a deployment model section.](media/image13.png "Select a deployment model section")
 
@@ -107,17 +108,20 @@ In this exercise, you will setup your environment to work with Azure Batch.
     - **PROJECT DETAILS**
         - **Subscription**: Select the subscription you are using for this hands-on lab.
         - **Resource group**: Select Create new and enter "hands-on-lab" for the resource group name.
+        
     - **INSTANCE DETAILS**
         - **Virtual machine name**: Enter "batch-jumpbox".
         - **Region**: Select the region you are using for resources in this hands-on lab.
         - **Availability options**: Leave set to no infrastructure redundancy required.
         - **Image**: Leave Ubuntu Server 16.04 LTS selected.
         - **Size**: Leave the default value selected (e.g., Standard D2s v3).
+        
     - **ADMINISTRATOR ACCOUNT**
         - **Authentication type**: Select Password.
         - **Username**: labuser
         - **Password**: Password.1!!
         - **Login in with Azure Active Directory**: Select Off.
+        
     - **INBOUND PORT RULES**
         - **Public inbound ports**: Select Allow selected ports.
         - **Select inbound ports**: Select SSH from the list.
@@ -156,19 +160,26 @@ In this exercise, you will setup your environment to work with Azure Batch.
 
 1. Install Azure CLI (upgrade CLI if needed).
 
-2. Within your SSH session, run the following command to prepare for the CLI:.
+2. Within your SSH session, run the following command to prepare for the CLI:
 
     ```bash
-    echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ xenial main" | \
-             sudo tee /etc/apt/sources.list.d/azure-cli.list
+    curl -sL https://packages.microsoft.com/keys/microsoft.asc | \
+        gpg --dearmor | \
+        sudo tee /etc/apt/trusted.gpg.d/microsoft.asc.gpg > /dev/null
+
+    sudo apt-get update
+    sudo apt-get install curl apt-transport-https lsb-release gnupg
+
+    AZ_REPO=$(lsb_release -cs)
+    echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
+        sudo tee /etc/apt/sources.list.d/azure-cli.list
     ```
 
 3. Next, run the following commands to install the Azure CLI:
 
     ```bash
-    sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 52E16F86FEE04B979B07E28DB02C46DF417A0893
-    sudo apt-get install apt-transport-https
-    sudo apt-get update && sudo apt-get install azure-cli
+    sudo apt-get update
+    sudo apt-get install azure-cli
     ```
 
 4. Verify that the Azure CLI is installed by running:
@@ -184,7 +195,7 @@ In this exercise, you will setup your environment to work with Azure Batch.
 6. The Azure CLI includes most of the functionality that you need for Azure Batch. However, new capabilities that are still in preview (such as the Templates and File feature we will use in this lab) are installed by an extension, and are not available from default Azure CLI installation. Run the following command to install the Microsoft Azure Batch Extensions. Note that you can always determine the latest release by visiting <https://github.com/Azure/azure-batch-cli-extensions/releases> and copying the URL for the Python Wheel (.whl) corresponding to the latest release. Use that URL as the value for the Source parameter in the following command:
 
     ```bash
-    az extension add --source https://github.com/Azure/azure-batch-cli-extensions/releases/download/azure-batch-cli-extensions-2.5.0/azure_batch_cli_extensions-2.5.0-py2.py3-none-any.whl
+    az extension add --source https://github.com/Azure/azure-batch-cli-extensions/releases/download/azure-batch-cli-extensions-3.0.4/azure_batch_cli_extensions-3.0.4-py2.py3-none-any.whl
     ```
 
 7. When prompted to install the extension, type Y and press enter.
@@ -202,7 +213,7 @@ In this exercise, you will setup your environment to work with Azure Batch.
       {
         "extensionType": "whl",
         "name": "azure-batch-cli-extensions",
-        "version": "2.5.0"
+        "version": "3.0.4"
       }
     ]
     ```
@@ -230,9 +241,11 @@ In this exercise, you will setup your environment to work with Azure Batch.
     - **PROJECT DETAILS**
         - **Subscription**: Select the subscription in which to create the Batch account.
         - **Resource group**: Select the existing resource group you created for this lab (hands-on-lab) for your new Batch account.
+        
     - **INSTANCE DETAILS**
         - **Account name**: Provide a name for your new Batch Account. The name you choose must be unique within the Azure region where the account is created (see Location below).
         - **Location**: The Azure region in which to create the Batch account.
+        
     - **STORAGE ACCOUNT**
         - Click **Select a storage account**, select **Create new** on the Choose storage account blade, and then enter a globally unique name for the storage account, and leave the remaining values set to their defaults. Select **OK**.
 
@@ -377,7 +390,7 @@ In this exercise, you will resample video files in a scale-out way by using Azur
 
     ![Add account icon](media/image39.png "Add account icon")
 
-3. Leave Add an Azure Account selected and the Azure environment set to Azure and select Sign in...
+3. Leave Add an Azure Account selected, and the Azure environment set to Azure and select Sign in...
 
     ![The Connect to Azure Storage page displays.](media/image40.png "Connect to Azure Storage page")
 
@@ -506,7 +519,7 @@ The first step in building a Batch Job is understanding the command line of the 
     ffmpeg \[options\] \[\[infile options\] -i infile\]\... {\[outfile options\] outfile}\...
     ```
 
-4. Next, resample one of the MP4 files found within the samples directory using ffmpeg. We use the -s option to indicate the desired width and height, followed by the strict option which allows the selection of the native FFmpeg AAC encoder:
+4. Next, resample one of the MP4 files found within the sample's directory using ffmpeg. We use the -s option to indicate the desired width and height, followed by the strict option which allows the selection of the native FFmpeg AAC encoder:
 
     ```bash
     ffmpeg -i big_buck_bunny_720p_30mb.mp4 -y -s "428x240" -strict -2 output.mp4
@@ -691,7 +704,7 @@ The first step in building a Batch Job is understanding the command line of the 
                 },
     ```
 
-13. Save the JSON file by selecting Write Out by typing Control + O followed by Enter to leave the name set to job.json. Use Contol + X to quit nano.
+13. Save the JSON file by selecting Write Out by typing Control + O followed by Enter to leave the name set to job.json. Use Control + X to quit nano.
 
 14. The template for the job is now ready for use by an end user.
 
@@ -745,7 +758,7 @@ In this task, pretend you are switching roles and are now the end user who has b
 
 5. It will take about 2-3 minutes for the Pool to be ready (at which point the resamplePool status will show a fixed 5 instances).
 
-    ![Under Pool status, resamplePool lists five instances.](media/image46.png "Pool status")
+    ![resamplePool lists five instances and a status of ready.](media/image46.png "Pool status")
 
 6. This means the VM nodes in the pool are ready for some work. Continue with the next task to supply some work.
 
@@ -781,7 +794,7 @@ In this task, you will continue in the role of the end user, this time using the
 
 7. Select the Refresh button (![Screenshot of the Refresh icon](media/image49.png "Refresh icon")) periodically until you see the status change from Active to Completed.
 
-    ![On the Batch Explorer dashboard, firstResample information displays.](media/image50.png)
+    ![On the Batch Explorer dashboard, firstResample information displays.](media/image48.png)
 
 8. From the Job dashboard, select the Job statistics panel.
 
@@ -817,7 +830,7 @@ In this task, you will continue in the role of the end user, this time using the
 
 17. In the ribbon of buttons that appears, select the rightmost button with the tool tip "Open in default application" to download and view the resampled version of the video on your local computer.
 
-    ![Under Files, big buck bunny file is selected, and a screenshot of the video displays.](media/image58.png "Video screenshot")
+    ![Under Files, big buck bunny file is selected, and the Open in default application is highlighted.](media/image58.png "Video screenshot")
 
     (c) copyright 2008, Blender Foundation / www.bigbuckbunny.org
 
@@ -871,7 +884,7 @@ We had to enable Auto scale using the portal, but we can also edit the Auto scal
 
     ![On the Pools tab, resamplePool information displays, along with the message that the pool has no nodes.](media/image64.png "Pools tab")
 
-3. Select the Resize button.
+3. Select the Resize button. If you do not see this button, you may need to wait for your pool to finish resizing down to 0 nodes.
 
     ![Screenshot of the Resize button.](media/image65.png "Resize button")
 
@@ -905,7 +918,7 @@ We had to enable Auto scale using the portal, but we can also edit the Auto scal
     $NodeDeallocationOption = taskcompletion;
     ```
 
-7. Review the formula. This formula will be evaluated every 5 minutes (as dictated by the Evaluation Interval). The first line gets percentage of telemetry actually reported versus the total amount expected. To understand this, note that Batch samples the telemetry every 30 seconds. In a 5 minute windows, therefore, there are theoretically 10 samples to expect. However, not all samples are collected in time because of various latencies, or they may be lost, leading to a case where fewer than the expected number of samples is collected.
+7. Review the formula. This formula will be evaluated every 5 minutes (as dictated by the Evaluation Interval). The first line gets percentage of telemetry actually reported versus the total amount expected. To understand this, note that Batch samples the telemetry every 30 seconds. In a 5-minute windows, therefore, there are theoretically 10 samples to expect. However, not all samples are collected in time because of various latencies, or they may be lost, leading to a case where fewer than the expected number of samples is collected.
 
     ```powershell
     $samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 5);
@@ -1056,7 +1069,7 @@ In this exercise you will use the Azure Batch Rendering Service to render a fram
 
     ![Under Add a new file group, 3dsmax-output displays.](media/image84.png "Add a new file group section")
 
-### Task 1: Render a 3ds Max Scene
+### Task 2: Render a 3ds Max Scene
 
 1. Select the Gallery tab from the left.
 
@@ -1096,13 +1109,13 @@ In this exercise you will use the Azure Batch Rendering Service to render a fram
         -width:400 -height:300
         ```
 
-    - **Output filegroup**: Select the fgrp-3dsmax-output file group from the list.
+    - **Outputs**: Select the fgrp-3dsmax-output file group from the list.
 
         ![Under Job, fields are set to the previously defined settings.](media/image89.png "Job")
 
-7. Select the submit button to create the Pool and launch the render Job.
+7. Select the Run and close button to create the Pool and launch the render Job.
 
-    ![Screenshot of the Submit button.](media/image90.png "Submit button")
+    ![Screenshot of the Run and close button.](media/image90.png "Run and close")
 
 8. This will take you to the Jobs tab, with your new Job pre-selected.
 
@@ -1134,15 +1147,15 @@ In this exercise you will use the Azure Batch Rendering Service to render a fram
 
     ![On the Batch Explorer desktop Pools tab, the pool status is deleting.](media/image97.png "Batch Explorer desktop, Pools tab")
 
-16. In a few moments your Pool will be cleaned up. The output files will remain in Azure Storage.
+16. In a few moments, your Pool will be cleaned up. The output files will remain in Azure Storage.
 
-17. You can Continue to the lab cleanup exercise, you don't have to wait.
+17. You can Continue to the lab cleanup exercise; you don't have to wait.
 
 ## After the hands-on lab
 
 Duration: 10 minutes
 
-Before you conclude the lab, you should make sure to cleanup all the resources used by the lab.
+Before you conclude the lab, you should make sure to clean up all the resources used by the lab.
 
 ### Task 1: Cleanup the Lab Resource Group
 
