@@ -1,7 +1,7 @@
 ![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
-High performance computing
+High Performance Computing
 </div>
 
 <div class="MCWHeader2">
@@ -26,7 +26,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- TOC -->
 
-- [High performance computing whiteboard design session student guide](#High-performance-computing-whiteboard-design-session-student-guide)
+- [High Performance Computing whiteboard design session student guide](#High-performance-computing-whiteboard-design-session-student-guide)
   - [Abstract and learning objectives](#Abstract-and-learning-objectives)
   - [Step 1: Review the customer case study](#Step-1-Review-the-customer-case-study)
     - [Customer situation](#Customer-situation)
@@ -40,13 +40,13 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- /TOC -->
 
-# High performance computing whiteboard design session student guide
+# High Performance Computing whiteboard design session student guide
 
 ## Abstract and learning objectives
 
-In this whiteboard design session, you will work with a group to design a scale-out media processing solution using high performance computing techniques in Azure.
+In this whiteboard design session, you will work with a group to design a scale-out media processing solution using High Performance Computing (HPC) techniques in Azure.
 
-At the end of this session, you will be better able to design and recommend high performance computing solutions that are highly scalable and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
+At the end of this session, you will be better able to design and recommend High Performance Computing solutions that are highly scalable and can be configured through declarative means as opposed to large amounts of complicated application code. You will also learn how to effectively manage and monitor these solutions to ensure predictable outcomes.
 
 ## Step 1: Review the customer case study
 
