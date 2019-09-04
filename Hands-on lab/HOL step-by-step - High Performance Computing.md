@@ -247,7 +247,7 @@ In this exercise, you will setup your environment to work with Azure Batch.
         - **Location**: The Azure region in which to create the Batch account.
 
     - **STORAGE ACCOUNT**
-        - Click **Select a storage account**, select **Create new** on the Choose storage account blade, and then enter a globally unique name for the storage account, and leave the remaining values set to their defaults. Select **OK**.    
+        - Choose **Select a storage account**, select **Create new** on the Choose storage account blade, and then enter a globally unique name for the storage account, and leave the remaining values set to their defaults. Select **OK**.    
 
     ![The New Batch account blade is displayed with the values specified above entered into the appropriate fields.](media/create-batch-account.png "New Batch account")
 
@@ -619,7 +619,7 @@ You can install ffmpeg using the apt-get package manager available within Ubuntu
     }
     ```
 
-9. Take a moment to understand what this template does (you can find complete documentation on the template syntax at <https://github.com/Azure/azure-batch-cli-extensions/tree/master/doc>). Let's begin with the parameters object. Similar to the parameters object created for the Pool template, this object enables you to expose the parameters that the user need to provide when running the Job. Notice that in this case, we require a poolId and a jobID as before. However, this template also supports a resolution parameter and uses the default value of "428x240" if the user does not supply a target resolution.
+9. Take a moment to understand what this template does (you can find complete documentation on the template syntax at <https://github.com/Azure/azure-batch-cli-extensions/tree/master/doc>). Let's begin with the parameters object. Similar to the parameters object created for the Pool template, this object enables you to expose the parameters that the user needs to provide when running the Job. Notice that in this case, we require a poolId and a jobID as before. However, this template also supports a resolution parameter and uses the default value of "428x240" if the user does not supply a target resolution.
 
     ```json
         "parameters": {
